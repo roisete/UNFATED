@@ -62,9 +62,15 @@ TagManager:
   - name: Borders
     uniqueID: 783778291
     locked: 0
+  - name: Character
+    uniqueID: 2985146141
+    locked: 0
   - name: Hide
     uniqueID: 1896302929
     locked: 0
   - name: Objects
     uniqueID: 3885285233
+    locked: 0
+  - name: Menu
+    uniqueID: 3145081511
     locked: 0

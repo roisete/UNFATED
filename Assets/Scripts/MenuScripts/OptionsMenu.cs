@@ -11,6 +11,9 @@ public class Sound : MonoBehaviour
     private Image sound;
 
     [SerializeField]
+    private GameObject menu = new();
+
+    [SerializeField]
     private GameObject gameBar;
     private AudioSource audioSource;
 
@@ -18,6 +21,7 @@ public class Sound : MonoBehaviour
     void Start()
     {
         audioSource = gameBar.GetComponent<AudioSource>();
+        menu.SetActive(true);
 
         // 
         if (PlayerPrefs.HasKey("SoundLevel"))
@@ -48,9 +52,10 @@ public class Sound : MonoBehaviour
             PlayerPrefs.SetFloat("SoundLevel", sound.fillAmount);
         }
         AudioListener.volume = sound.fillAmount;
-        if (Input.GetAxisRaw("Cancel") == 1){
+
+        if (Input.GetAxisRaw("Cancel") == 1 || Input.GetKeyDown(KeyCode.Escape)){
             audioSource.Play();
-            SceneManager.LoadScene("MainMenu");
+            menu.SetActive(false);
         }
     }
 }

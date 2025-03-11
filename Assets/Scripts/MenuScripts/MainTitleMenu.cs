@@ -11,6 +11,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject menuArrow;
 
+    [SerializeField]
+    private GameObject optionsMenu;
+
     private int index = 0;
 
     private AudioSource audioSource;
@@ -24,7 +27,7 @@ public class MainMenu : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         pos.x = menuArrow.GetComponent<SpriteRenderer>().transform.position.x;
         pos.y = menuArrow.GetComponent<SpriteRenderer>().transform.position.y;
-
+        optionsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class MainMenu : MonoBehaviour
                     break;
                 case 1:
                     audioSource.Play();
-                    SceneManager.LoadScene("OptionsMenu");
+                    optionsMenu.SetActive(true);
                     break;
                 case 2:
                     audioSource.Play();
@@ -75,7 +78,5 @@ public class MainMenu : MonoBehaviour
             }
             audioSource.Play();
         }
-
-        
     }
 }
