@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +11,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject pauseMenu = new();
 
+    [SerializeField]
+    private AudioSource collisionSound = new();
+
     private Vector2 direction = Vector3.zero;
     private Vector2 posChar = Vector3.zero;
     private Vector2 posMenu = Vector3.zero;
     private Rigidbody2D rb2d;
     private Animator animator;
+
+    [SerializeField]
+    private AudioSource waterSound;
+
     // Start is called before the first frame update
     void Start()
     {
