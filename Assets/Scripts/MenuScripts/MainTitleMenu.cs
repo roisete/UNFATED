@@ -11,6 +11,19 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject menuArrow;
 
+    /*MUSIC*/
+    /*--------------------------------------------------*/
+
+    [SerializeField]
+    GameObject menuTheme = new GameObject();
+    [SerializeField]
+    GameObject playMusic = new GameObject();
+
+    AudioSource menu;
+    AudioSource play;
+
+    /*--------------------------------------------------*/
+
     [SerializeField]
     private GameObject optionsMenu;
 
@@ -28,6 +41,8 @@ public class MainMenu : MonoBehaviour
         pos.x = menuArrow.GetComponent<SpriteRenderer>().transform.position.x;
         pos.y = menuArrow.GetComponent<SpriteRenderer>().transform.position.y;
         optionsMenu.SetActive(false);
+        menu = menuTheme.GetComponent<AudioSource>();
+        play = playMusic.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,7 +53,7 @@ public class MainMenu : MonoBehaviour
             switch (index)
             {
                 case 0:
-                    SceneManager.LoadScene("StartScene");
+                    StartCoroutine(LetsPlay());
                     break;
                 case 1:
                     audioSource.Play();
@@ -78,5 +93,19 @@ public class MainMenu : MonoBehaviour
             }
             audioSource.Play();
         }
+    }
+
+    /* Little sequence before entering the game*/
+    private void LetsPla()
+    {
+        play.Play();
+        menu.Stop();
+    }
+
+    IEnumerator LetsPlay(){
+        menu.Stop();
+        play.Play();
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("StartScene");
     }
 }

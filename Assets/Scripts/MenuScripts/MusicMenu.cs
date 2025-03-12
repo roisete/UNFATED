@@ -6,20 +6,20 @@ public class MusicMenu : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject musicObject = new GameObject();
+    GameObject menuTheme = new GameObject();
+    [SerializeField]
+    GameObject playMusic = new GameObject();
 
-    AudioSource music;
+    AudioSource menu;
+    AudioSource play;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        music = musicObject.GetComponent<AudioSource>();
-        music.Play();
-    }
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(musicObject);
+        menu = menuTheme.GetComponent<AudioSource>();
+        play = playMusic.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

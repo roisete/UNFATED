@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float speed = 20f;
 
+    [SerializeField]
+    GameObject pauseMenu = new();
+
     private Vector2 direction = Vector3.zero;
+    private Vector2 posChar = Vector3.zero;
+    private Vector2 posMenu = Vector3.zero;
     private Rigidbody2D rb2d;
     private Animator animator;
     // Start is called before the first frame update
@@ -20,6 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        posChar = rb2d.transform.position;
         if (direction.y < 0 && direction.x == 0)
         {
             animator.SetBool("Up", false);
@@ -98,6 +104,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RightDown", false);
         }
 
+        posMenu.x = posChar.x - 0.35f;
+        posMenu.y = posChar.y -4.6f;
+
+        pauseMenu.transform.position = posMenu;
     }
     private void FixedUpdate()
     {

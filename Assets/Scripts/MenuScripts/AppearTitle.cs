@@ -11,7 +11,7 @@ public class AppearMenu : MonoBehaviour
     GameObject blackScreen = new GameObject();
 
     [SerializeField]
-    float menuAppear = 5f;
+    float menuAppear = 4.5f;
     [SerializeField]
     float blackIntro = 7f;
 
