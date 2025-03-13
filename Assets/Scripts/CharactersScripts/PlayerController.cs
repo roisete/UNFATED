@@ -12,16 +12,15 @@ public class PlayerController : MonoBehaviour
     GameObject pauseMenu = new();
 
     [SerializeField]
-    private AudioSource collisionSound = new();
+    float menuX;
+    [SerializeField]
+    float menuY;
 
     private Vector2 direction = Vector3.zero;
     private Vector2 posChar = Vector3.zero;
     private Vector2 posMenu = Vector3.zero;
     private Rigidbody2D rb2d;
     private Animator animator;
-
-    [SerializeField]
-    private AudioSource waterSound;
 
     // Start is called before the first frame update
     void Start()
@@ -112,8 +111,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RightDown", false);
         }
 
-        posMenu.x = posChar.x - 0.35f;
-        posMenu.y = posChar.y -4.6f;
+        posMenu.x = posChar.x - menuX;
+        posMenu.y = posChar.y - menuY;
 
         pauseMenu.transform.position = posMenu;
     }

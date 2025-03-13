@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 37
+  controlID: 55
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 36
+  controlID: 54
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 35
+  controlID: 53
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dc830100
-      m_LastClickedID: 99292
-      m_ExpandedIDs: 7a21fdff2022fdff1023fdffb423fdffc424fdff2a26fdffc428fdff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: baf5feff26f6feff28f6feff7043fffffe45ffff0046ffffc0f1ffff06f2ffff08f2ffffc0f3ffffc2f3ffffdcf4ffff60f6ffff24f7fffffefaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -623,9 +623,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3c060000
-    m_LastClickedID: 1596
-    m_ExpandedIDs: 0000000008060000
+    m_SelectedIDs: 48cb0000
+    m_LastClickedID: 52040
+    m_ExpandedIDs: 00000000bac900004acb0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +653,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000bac90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: ec6a0000887d000014b10000f827010032890000388900009ac40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1110,7 +1110,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1195,9 +1195,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.43955576, y: -0.78589636, z: -0.015635058}
+    m_Target: {x: 3.987904, y: -5.0884976, z: -0.021213723}
     speed: 2
-    m_Value: {x: -0.55579543, y: -0.7996698, z: -0.017513245}
+    m_Value: {x: 3.987904, y: -5.0884976, z: -0.021213723}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1247,9 +1247,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.9859595
+    m_Target: 4.530381
     speed: 2
-    m_Value: 4.1737795
+    m_Value: 4.530381
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1296,8 +1296,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 1632
-    height: 1278
+    width: 1079
+    height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1352,23 +1352,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1632
-      height: 1257
-    m_Scale: {x: 1.1255087, y: 1.1255087}
-    m_Translation: {x: 816.00006, y: 628.5}
+      width: 1079
+      height: 905
+    m_Scale: {x: 1.6830282, y: 1.6830281}
+    m_Translation: {x: 539.5, y: 452.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -725.00555
-      y: -558.4142
-      width: 1450.0111
-      height: 1116.8284
+      x: -320.55316
+      y: -268.86063
+      width: 641.1063
+      height: 537.72125
     m_MinimalGUI: 1
-  m_defaultScale: 2
-  m_LastWindowPixelSize: {x: 1632, y: 1278}
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1079, y: 926}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
