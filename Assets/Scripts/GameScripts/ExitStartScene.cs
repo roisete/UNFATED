@@ -6,25 +6,17 @@ using UnityEngine.SceneManagement;
 public class ExitStartScene : MonoBehaviour
 {
 
+    [SerializeField]
+    string scene;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    public GameObject player = new();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("CaveScene", LoadSceneMode.Single);
+            SceneManager.LoadScene(scene);
         }
     }
-
 }

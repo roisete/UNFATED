@@ -72,6 +72,9 @@ TagManager:
   - name: Hide
     uniqueID: 1896302929
     locked: 0
+  - name: Darkness
+    uniqueID: 3884154789
+    locked: 0
   - name: BackgroundMenu
     uniqueID: 3958355691
     locked: 0
@@ -80,7 +83,4 @@ TagManager:
     locked: 0
   - name: Bar
     uniqueID: 2000979071
-    locked: 0
-  - name: Transition
-    uniqueID: 3884154789
     locked: 0

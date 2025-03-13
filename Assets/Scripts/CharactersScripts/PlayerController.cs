@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
@@ -113,7 +115,6 @@ public class PlayerController : MonoBehaviour
 
         posMenu.x = posChar.x - menuX;
         posMenu.y = posChar.y - menuY;
-
         pauseMenu.transform.position = posMenu;
     }
     private void FixedUpdate()
