@@ -8,6 +8,9 @@ public class ShowMenu : MonoBehaviour
     private GameObject pauseMenu = new();
     bool isGamePaused;
 
+    [SerializeField]
+    private AudioSource audioSource = new();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +39,13 @@ public class ShowMenu : MonoBehaviour
         {
             if (isGamePaused)
             {
+                audioSource.Play();
                 ContinueGame();
                 Debug.Log("Game should NOT be paused rn");
             } 
             else
             {
+                audioSource.Play();
                 PauseGame();
                 Debug.Log("Game should be paused rn");
             }
