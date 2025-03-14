@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Sound : MonoBehaviour
+public class OptionsMenu : MonoBehaviour
 {
     // Make a sounf bar with an Image component
     [SerializeField]

@@ -24,6 +24,63 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator animator;
 
+    public static PlayerController instance;
+    
+    // Position for each scene
+    [System.Serializable]
+    public class SpawnPosition{
+        public string sceneName;
+        public Vector2 position;
+    }
+
+    [SerializeField]
+    private List<SpawnPosition> scenePositionsList = new List<SpawnPosition>();
+    
+    // Default position if not specified for a scene
+    [SerializeField]
+    private Vector2 defaultPosition = new Vector2(0, 0);
+
+    void Awake()
+    {
+        // Singleton implementation
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            // If an instance already exists, destroy this duplicate
+            Destroy(gameObject);
+        }
+    }
+    
+    // Called when a new scene is loaded
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SpawnPosition scenePos = scenePositionsList.Find(pos => pos.sceneName == scene.name);
+
+        // Position the player at the specified location for this scene
+        if (scenePos != null)
+        {
+            transform.position = scenePos.position;
+        }
+        else
+        {
+            // Use default position if no specific position is defined for this scene
+            transform.position = defaultPosition;
+        }
+    }
+    
+    // Called when the object is destroyed
+    void OnDestroy()
+    {
+        // Unsubscribe from the event when the object is destroyed
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
