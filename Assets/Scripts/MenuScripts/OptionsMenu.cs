@@ -53,8 +53,7 @@ public class OptionsMenu : MonoBehaviour
         }
         AudioListener.volume = sound.fillAmount;
 
-        if (Input.GetAxisRaw("Cancel") == 1 || Input.GetKeyDown(KeyCode.Escape)){
-            audioSource.Play();
+        if (Input.GetKeyDown(KeyCode.Escape)){
             menu.SetActive(false);
         }
     }

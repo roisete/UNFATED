@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collisions
+  - Green Orb
+  - Blue Orb
+  - Red Orb
+  - Purple Orb
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -74,6 +78,12 @@ TagManager:
     locked: 0
   - name: Darkness
     uniqueID: 3884154789
+    locked: 0
+  - name: DialogBox
+    uniqueID: 2084836407
+    locked: 0
+  - name: DialogText
+    uniqueID: 2275446785
     locked: 0
   - name: BackgroundMenu
     uniqueID: 3958355691

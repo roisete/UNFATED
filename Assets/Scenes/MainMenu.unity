@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &492369207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,9 +967,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542888715349336776, guid: 777df65df992a8c4daa4f18f67906692, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.44
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7748106806930645136, guid: 777df65df992a8c4daa4f18f67906692, type: 3}
+    - {fileID: 8747868977860994984, guid: 777df65df992a8c4daa4f18f67906692, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777df65df992a8c4daa4f18f67906692, type: 3}

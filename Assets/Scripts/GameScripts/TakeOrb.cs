@@ -31,11 +31,22 @@ public class TakeOrb : MonoBehaviour
     {
         if (playerInRange && !isTriggered && Input.GetKeyDown(KeyCode.C))
         {
-            isTriggered = true;
+
+            StartCoroutine(TakingOrb());
             orb.SetActive(false);
+            isTriggered = true;
         }
-        
     }
 
+    private IEnumerator TakingOrb()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length);
+        addOrbtoInventory(orb);
+    }
 
+    private void addOrbtoInventory(GameObject orb)
+    {
+        CharacterStats.instance.keyItems.Add(orb.tag);
+    }
 }

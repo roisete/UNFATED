@@ -12,6 +12,9 @@ public class GreenPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject greenOrb = new();
 
+    [SerializeField]
+    private GameObject audioSource;
+
     private bool playerInRange = false;
 
     // Start is called before the first frame update
@@ -37,7 +40,7 @@ public class GreenPuzzle : MonoBehaviour
     }
 
     // OnTrigger only work the exact frame it enters, so we can´t make the condition there
-    public void Update()
+    private void Update()
     {
         if (playerInRange && !isTriggered && Input.GetKeyDown(KeyCode.C))
         {
@@ -47,9 +50,9 @@ public class GreenPuzzle : MonoBehaviour
         }
     }
 
-    public IEnumerator OrbActivation(GameObject orb){
+    private IEnumerator OrbActivation(GameObject orb){
         yield return new WaitForSeconds(0.5f);
         orb.SetActive(true);
-        orb.GetComponent<AudioSource>().Play();
+        audioSource.GetComponent<AudioSource>().Play();
     }
 }

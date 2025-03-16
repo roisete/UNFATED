@@ -25,12 +25,6 @@ public class AppearMenu : MonoBehaviour
         StartCoroutine(DisableBlackScreen());
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-
-    }
-
     IEnumerator DisableBlackScreen()
     {
         yield return new WaitForSeconds(blackIntro);

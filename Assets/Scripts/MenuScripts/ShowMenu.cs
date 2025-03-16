@@ -6,7 +6,8 @@ public class ShowMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenu = new();
-    bool isGamePaused;
+    private bool isGamePaused;
+    private bool canInteract = true;
 
     [SerializeField]
     private AudioSource audioSource = new();
@@ -18,14 +19,15 @@ public class ShowMenu : MonoBehaviour
         isGamePaused = false;
     }
 
-    public void PauseGame()
+    private void PauseGame()
     {
         pauseMenu.SetActive(true);
+        audioSource.Play();
         Time.timeScale = 0;
         isGamePaused = true;
-    
+
     }
-    public void ContinueGame()
+    private void ContinueGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
@@ -35,19 +37,29 @@ public class ShowMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Cancel") == 1 || Input.GetKeyDown(KeyCode.Escape))
+        // Track key releases to prevent multiple actions when pressing once
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (isGamePaused)
+            canInteract = true;
+        }
+
+        if (canInteract)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 audioSource.Play();
-                ContinueGame();
-                Debug.Log("Game should NOT be paused rn");
-            } 
-            else
-            {
-                audioSource.Play();
-                PauseGame();
-                Debug.Log("Game should be paused rn");
+                canInteract = false;
+                if (isGamePaused)
+                {
+                    
+                    ContinueGame();
+                    Debug.Log("Xogo en marcha");
+                }
+                else
+                {
+                    PauseGame();
+                    Debug.Log("Xogo en pausa");
+                }
             }
         }
     }

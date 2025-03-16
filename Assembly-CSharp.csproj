@@ -64,18 +64,23 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameScripts\StandardDialogAppear.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\MusicMenu.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\CaveWalkEvent.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\MainTitleMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\Sokoban.cs" />
-    <Compile Include="Assets\Scripts\CharactersScripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\ChangeRune.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\AppearTitle.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\RedPuzzle.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GreenPuzzle.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TakeNote.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\ShowMenu.cs" />
-    <Compile Include="Assets\Scripts\CharactersScripts\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ExitStartScene.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TakeOrb.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\OpenGate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
