@@ -95,17 +95,10 @@ public class MainTitleMenu : MonoBehaviour
         }
     }
 
-    /* Little sequence before entering the game*/
-    private void LetsPla()
-    {
-        play.Play();
-        menu.Stop();
-    }
-
     IEnumerator LetsPlay(){
         menu.Stop();
         play.Play();
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("RobotinJrDialog");
     }
 }

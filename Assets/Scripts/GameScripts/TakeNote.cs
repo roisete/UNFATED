@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class TakeNote : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject note = new GameObject();
+[SerializeField]
+    private GameObject note;
 
     [SerializeField]
     private GameObject dialogBox;
@@ -17,18 +17,18 @@ public class TakeNote : MonoBehaviour
     [SerializeField]
     private List<string> textValue;
     [SerializeField]
-    private AudioSource audioSource;
+    private GameObject audioSource;
 
-    private bool isTriggered = false;
     private bool playerInRange = false;
     private bool isGamePaused = false;
-    private bool canInteract = true;
+    private bool hasDialogOpened = false; // Ensure dialog only opens once
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = true;
+            Debug.Log("Player entered trigger zone");
         }
     }
 
@@ -51,41 +51,35 @@ public class TakeNote : MonoBehaviour
         textBox.GetComponent<Text>().text = textValue[textIndex];
         Time.timeScale = 0;
         isGamePaused = true;
-
+        hasDialogOpened = true;
+        Debug.Log("Dialogo aberto");
     }
+
     private void ContinueGame()
     {
         dialogBox.SetActive(false);
         Time.timeScale = 1;
         isGamePaused = false;
         textIndex = 0;
+        Debug.Log("Diálogo pechado");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Track key releases to prevent multiple actions when pressing once
-        if (Input.GetKeyUp(KeyCode.C))
+        // Open dialog
+        if (Input.GetKeyDown(KeyCode.C) && playerInRange && !isGamePaused && !hasDialogOpened)
         {
-            canInteract = true;
+            audioSource.GetComponent<AudioSource>().Play();
+            PauseGame();
         }
 
-        // Open dialog
-        if (canInteract)
+        // Dialog already opened
+        if (isGamePaused)
         {
-            if (Input.GetKeyDown(KeyCode.C) && playerInRange && !isTriggered && !isGamePaused)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                canInteract = false; // Mark key as pressed until released
-                audioSource.Play();
-                isTriggered = true;
-                PauseGame();
-                Debug.Log("Dialogo aberto");
-            }
-
-            // Dialog already opened
-            else if (isTriggered && isGamePaused)
-            {
-                canInteract = false;
+                audioSource.GetComponent<AudioSource>().Play();
                 // Showing more text
                 if (textIndex < textValue.Count)
                 {
@@ -98,9 +92,12 @@ public class TakeNote : MonoBehaviour
                 {
                     ContinueGame();
                     note.SetActive(false);
-                    isTriggered = false;
-                    Debug.Log("Diálogo pechado");
                 }
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                audioSource.GetComponent<AudioSource>().Play();
+                ContinueGame();
             }
         }
     }

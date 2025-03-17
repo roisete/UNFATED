@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            
-            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -43,21 +41,6 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        SpawnPosition scenePos = scenePositionsList.Find(pos => pos.sceneName == scene.name);
-
-        // Position the player at the specified location for this scene
-        transform.position = scenePos.position;
-    }
-    
-    void OnDestroy()
-    {
-        // Unsubscribe from the event when the object is destroyed
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
     // Start is called before the first frame update
     void Start()
     {

@@ -5,13 +5,13 @@ using UnityEngine;
 public class RedPuzzle : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> runes = new();
+    private List<GameObject> runes;
     [SerializeField]
-    private GameObject redOrb = new();
+    private GameObject redOrb;
     [SerializeField]
-    private GameObject trunk = new();
+    private GameObject trunk;
     [SerializeField]
-    private GameObject miniTrunk = new();
+    private GameObject miniTrunk;
     private bool isPuzzleSolved = false;
 
 

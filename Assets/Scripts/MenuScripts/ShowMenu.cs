@@ -51,7 +51,6 @@ public class ShowMenu : MonoBehaviour
                 canInteract = false;
                 if (isGamePaused)
                 {
-                    
                     ContinueGame();
                     Debug.Log("Xogo en marcha");
                 }

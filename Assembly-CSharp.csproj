@@ -66,17 +66,22 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameScripts\StandardDialogAppear.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\MenuScripts\MusicMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\CaveWalkEvent.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\MainTitleMenu.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ChangeRune.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\CaveWalkEvent.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\AppearTitle.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\EnterCave.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\RobotinJrDialog.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\BattleHUD.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\BattleSystem.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RedPuzzle.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GreenPuzzle.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TakeNote.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\ShowMenu.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\CharacterEvents.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ExitStartScene.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TakeOrb.cs" />

@@ -9,10 +9,9 @@ public class StandardDialogAppear : MonoBehaviour
     private GameObject textBox;
     [SerializeField]
     private string textValue;
-    
+
     [SerializeField]
-    private AudioSource audioSource;
-    private bool isTriggered = false;
+    private GameObject audioSource;
     private bool isGamePaused = false;
     private bool playerInRange = false;
     private bool canInteract = true;
@@ -36,8 +35,8 @@ public class StandardDialogAppear : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {  
-        dialogBox.SetActive(false);   
+    {
+        dialogBox.SetActive(false);
     }
 
     private void PauseGame()
@@ -47,7 +46,7 @@ public class StandardDialogAppear : MonoBehaviour
         Time.timeScale = 0;
         isGamePaused = true;
     }
-    
+
     private void ContinueGame()
     {
         dialogBox.SetActive(false);
@@ -63,26 +62,24 @@ public class StandardDialogAppear : MonoBehaviour
         {
             canInteract = true;
         }
-        
+
         if (canInteract)
         {
             // Show dialog
-            if (Input.GetKeyDown(KeyCode.C) && playerInRange && !isTriggered && !isGamePaused)
+            if (Input.GetKeyDown(KeyCode.C) && playerInRange && !isGamePaused)
             {
                 canInteract = false;
-                audioSource.Play();
+                audioSource.GetComponent<AudioSource>().Play();
                 PauseGame();
-                isTriggered = true;
                 Debug.Log("Dialog shown");
             }
-            
+
             // Hide dialog
-            else if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C)) && isTriggered && isGamePaused)
+            else if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C)) && isGamePaused)
             {
                 canInteract = false;
-                audioSource.Play();
+                audioSource.GetComponent<AudioSource>().Play();
                 ContinueGame();
-                isTriggered = false;
                 Debug.Log("Dialog hidden");
             }
         }
