@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OpenGate : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gate = new GameObject();
+    private GameObject gate;
 
     [SerializeField]
     private GameObject dialogBox;

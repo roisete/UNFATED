@@ -6,11 +6,11 @@ public class GreenPuzzle : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject lever = new();
+    private GameObject lever;
     private bool isTriggered = false;
 
     [SerializeField]
-    private GameObject greenOrb = new();
+    private GameObject greenOrb;
 
     [SerializeField]
     private GameObject audioSource;

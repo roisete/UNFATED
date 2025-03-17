@@ -10,6 +10,8 @@ public class RobotinJrDialog : MonoBehaviour
     private GameObject dialogBox;
     [SerializeField]
     private GameObject textBox;
+    [SerializeField]
+    private GameObject c;
     private int textIndex = 0;
     [SerializeField]
     private List<string> textValue;
@@ -35,6 +37,7 @@ public class RobotinJrDialog : MonoBehaviour
     private void ContinueGame()
     {
         dialogBox.SetActive(false);
+        c.SetActive(false);
         Time.timeScale = 1;
         isGamePaused = false;
         textIndex = 0;

@@ -16,7 +16,7 @@ public class BattleAppear : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
-    public GameObject player = new();
+    public GameObject player;
 
     private void Start()
     {
@@ -26,12 +26,18 @@ public class BattleAppear : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !CharacterEvents.instance.plantDefeated)
         {
             StartCoroutine(Wait());
             gameObject.SetActive(false);
             CharacterStats.instance.ChangeScene("Plant1Combat");
+            CharacterEvents.instance.plantDefeated = true;
         }
+        if (CharacterEvents.instance.plantDefeated)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     IEnumerator Wait(){

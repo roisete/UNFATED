@@ -8,6 +8,8 @@ public class CharacterEvents : MonoBehaviour
 
     public bool robotinWalkTriggered = false;
 
+    public bool plantDefeated = false;
+
     public static CharacterEvents instance;
 
     void Awake()

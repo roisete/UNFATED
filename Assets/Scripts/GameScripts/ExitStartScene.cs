@@ -9,7 +9,7 @@ public class ExitStartScene : MonoBehaviour
     [SerializeField]
     private string scene;
 
-    public GameObject player = new();
+    public GameObject player;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

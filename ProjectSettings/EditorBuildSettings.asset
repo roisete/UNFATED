@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Plant1Combat.unity
     guid: 95fba703a568c364fb1ce6e690397034
+  - enabled: 1
+    path: Assets/Scenes/Zombie2Combat.unity
+    guid: ce88a597fe1435a49a58e803d491b0d1
   m_configObjects: {}

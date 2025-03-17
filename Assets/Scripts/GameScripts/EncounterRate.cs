@@ -1,55 +1,63 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 
 public class EncounterRate : MonoBehaviour
 {
-    public int index = 0;
+    [SerializeField]
+    private float encounterCheckInterval = 0.5f;
+    [SerializeField]
+    private int encounterProbability = 10; //10%
+
     private string sceneName;
 
-    public int rate;
-    public int rate2;
-    
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
-        StartCoroutine(GetEncounter());
+        StartCoroutine(CheckForEncounter());
     }
 
-
-    // Every second we increase the rate. This is a ver raw temporary method, I'll change it in the future
-    IEnumerator GetEncounter()
+    IEnumerator CheckForEncounter()
     {
-        rate =  Random.Range(index, 60);
-        rate2 = Random.Range(index, 60);
-        if(rate2 == rate)
+        while (true)
         {
-            Debug.Log("Encounter!");
-            yield return new WaitForSeconds(0.5f);
-            // Spawn encounter here
-            if (sceneName == "StartScene" && rate <= 1500)
+            yield return new WaitForSeconds(encounterCheckInterval);
+
+            int randomValue = Random.Range(0, 100);
+
+            //If random value is lesser than 10% at default, the battle starts
+            if (randomValue < encounterProbability)
             {
-                CharacterStats.instance.ChangeScene("SlimeCombat");
+                TriggerEncounter();
             }
-            else if (sceneName == "StartScene" && rate > 1500)
+        }
+    }
+
+    void TriggerEncounter()
+    {
+        if (sceneName == "StartScene")
+        {
+            int randomEncounter = Random.Range(0, 3);
+            if (randomEncounter != 0)
+            {
+                CharacterStats.instance.ChangeScene("SlimeCombat"); //More prob to a weaker enemy
+            }
+            else
             {
                 CharacterStats.instance.ChangeScene("Slime2Combat");
             }
-            else if (sceneName == "CaveScene")
-            {
-                    CharacterStats.instance.ChangeScene("Slime3Combat");
-            }
-            rate = 0;
-            rate2 = 0;
         }
-        else
+        else if (sceneName == "CaveScene")
         {
-            yield return new WaitForSeconds(0.5f);
-            rate++;
-            rate2++;
+            int randomEncounter = Random.Range(0, 3);
+            if (randomEncounter != 0)
+            {
+                CharacterStats.instance.ChangeScene("Slime3Combat"); //More prob to a weaker enemy
+            }
+            else
+            {
+                CharacterStats.instance.ChangeScene("Zombie2Combat");
+            }
         }
     }
 }

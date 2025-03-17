@@ -14,7 +14,7 @@ public class CharacterStats : MonoBehaviour
     public int level;
     public int exp;
     public int totalEXP;
-    private float nextLevel = 15;
+    private float nextLevel = 10;
 
     public void addExp(int enemyExp)
     {
@@ -25,10 +25,20 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
+    public bool checkLevelUp()
+    {
+        if (exp >= totalEXP)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void LevelUp()
     {
+        int expRest = exp - totalEXP;
         level++;
-        exp = 0;
+        exp = expRest;
         totalEXP = (int)(nextLevel * (level * 1.2f));
         nextLevel *= 1.2f;
         maxHealth += (int)Random.Range(0, 6);

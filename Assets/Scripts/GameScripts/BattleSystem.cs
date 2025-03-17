@@ -192,7 +192,12 @@ public class BattleSystem : MonoBehaviour
             enemyUnit.GetComponent<AudioSource>().Play();
             dialogText.text = "Ganaste!";
             CharacterStats.instance.addExp(enemyUnit.unitExp);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
+            if (CharacterStats.instance.checkLevelUp())
+            {
+                dialogText.text = "Has subido de nivel!";
+                yield return new WaitForSeconds(2f);
+            }
             OnBackToMenu();
         }
         else if (state == BattleState.LOST)
@@ -221,7 +226,7 @@ public class BattleSystem : MonoBehaviour
         {
             CharacterStats.instance.ChangeScene("StartScene");
         }
-        else if (sceneName == "Slime3Combat" || sceneName == "ZombieCombat")
+        else if (sceneName == "Slime3Combat" || sceneName == "Zombie2Combat")
         {
             CharacterStats.instance.ChangeScene("CaveScene");
         }

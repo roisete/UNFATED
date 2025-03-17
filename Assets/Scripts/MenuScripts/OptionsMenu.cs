@@ -11,7 +11,7 @@ public class OptionsMenu : MonoBehaviour
     private Image sound;
 
     [SerializeField]
-    private GameObject menu = new();
+    private GameObject menu;
 
     [SerializeField]
     private GameObject gameBar;

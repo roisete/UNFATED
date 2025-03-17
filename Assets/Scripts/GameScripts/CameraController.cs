@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     private CinemachineVirtualCamera virtualCamera;
 
     [SerializeField]
-    private GameObject menu = new();
+    private GameObject menu;
 
     [SerializeField]
     private CinemachineConfiner cinemachineConfiner;

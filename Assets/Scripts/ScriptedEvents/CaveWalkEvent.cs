@@ -5,9 +5,9 @@ using UnityEngine;
 public class CaveWalkEvent : MonoBehaviour
 {
     [SerializeField]
-    private GameObject robotin = new();
+    private GameObject robotin;
     [SerializeField]
-    private GameObject gate = new();
+    private GameObject gate;
     [SerializeField]
     private float speed = 2;
 
