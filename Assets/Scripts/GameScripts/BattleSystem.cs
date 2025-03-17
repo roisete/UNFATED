@@ -5,18 +5,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Manages all the mechanics in a classic turn-based RPG battle
+
 public enum BattleState {
     START,
     PLAYERTURN,
     ENEMYTURN,
     WON,
-    LOST
+    LOST,
+    FLED
 }
-
 
 
 public class BattleSystem : MonoBehaviour
 {
+    public GameObject player;
     public GameObject enemy;
     public Transform enemyPosition;
 
@@ -44,7 +47,7 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemy, enemyPosition);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        dialogText.text = "A wild " + enemyUnit.unitName + " appears!";
+        dialogText.text = "Un " + enemyUnit.unitName + " apareció!";
 
         enemyName.text = enemyUnit.unitName;
 
@@ -59,16 +62,24 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
-        dialogText.text = "Choose an action:";
+        dialogText.text = "Escoge:";
     }
 
     IEnumerator EnemyTurn()
     {
-        bool isPlayerDead = CharacterStats.instance.TakeDamage(enemyUnit.unitAttack);
-        dialogText.text = "You took " + enemyUnit.unitAttack + " damage from " + enemyUnit.unitName + "!";
+        int damageDealt = enemyUnit.unitAttack - CharacterStats.instance.defense;
+        if (damageDealt <= 0)
+        {
+            damageDealt = 0;
+        }
+        //Attack animation
+        enemyUnit.GetComponent<Animator>().SetTrigger("Attack");
+        enemyUnit.GetComponent<AudioSource>().Play();
+        CharacterStats.instance.health -= damageDealt;
+        dialogText.text = "Recibiste " + enemyUnit.unitAttack + " de daño de " + enemyUnit.unitName + "!";
         yield return new WaitForSeconds(1f);
-        playerHUD.SetHP(CharacterStats.instance.health);
-        if (isPlayerDead)
+        playerHUD.hpText.text = CharacterStats.instance.health.ToString() + "/" + CharacterStats.instance.maxHealth.ToString(); 
+        if (CharacterStats.instance.health <= 0)
         {
             state = BattleState.LOST;
             Debug.Log("LOST");
@@ -83,9 +94,12 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
+        //Hurt animation
+        enemyUnit.GetComponent<Animator>().SetTrigger("Hurt");
+        enemyUnit.GetComponent<AudioSource>().Play();
         //Damage the enemy
         bool isEnemyDead = enemyUnit.TakeDamage(CharacterStats.instance.attack);
-        dialogText.text = "You attack dealt " + CharacterStats.instance.attack + " damage to " + enemyUnit.unitName + "!";
+        dialogText.text = "Has hecho " + CharacterStats.instance.attack + " de daño a " + enemyUnit.unitName + "!";
         CharacterStats.instance.defense = CharacterStats.instance.initialDefense;
         yield return new WaitForSeconds(1f);
 
@@ -107,12 +121,12 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerDefend()
     {
         int boost = (int)Random.Range(0, 5);
-        dialogText.text = "You defended yourself!";
+        dialogText.text = "Te intentas defender!";
         CharacterStats.instance.defense += boost;
         yield return new WaitForSeconds(1f);
         if (boost == 0)
         {
-            dialogText.text = "Your defense failed!";
+            dialogText.text = "No te sirvió de nada!";
         }
         state = BattleState.ENEMYTURN;
         Debug.Log("ENEMYTURN");
@@ -122,14 +136,23 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerFlee()
     {
         int flee = (int)Random.Range(0, 10);
-        dialogText.text = "You try to flee!";
+        dialogText.text = "Intentas escapar!";
         yield return new WaitForSeconds(1f);
         if (flee >= 6)
         {
-            dialogText.text = "Your fled successfully!";
+            state = BattleState.FLED;
+            Debug.Log("FLED");
+            StartCoroutine(EndBattle());
         }
-        state = BattleState.WON;
-        Debug.Log("WON");
+        else
+        {
+            dialogText.text = "No lograste escapar!";
+            yield return new WaitForSeconds(1f);
+            state = BattleState.ENEMYTURN;
+            Debug.Log("ENEMYTURN");
+            StartCoroutine(EnemyTurn());
+        }
+        
     }
     
 
@@ -164,27 +187,41 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            dialogText.text = "You have won!";
+            //Death animation
+            enemyUnit.GetComponent<Animator>().SetTrigger("Death");
+            enemyUnit.GetComponent<AudioSource>().Play();
+            dialogText.text = "Ganaste!";
             CharacterStats.instance.addExp(enemyUnit.unitExp);
             yield return new WaitForSeconds(3f);
             OnBackToMenu();
         }
         else if (state == BattleState.LOST)
         {
-            dialogText.text = "You have lost!";
+            dialogText.text = "Has sido derrotado...";
+            yield return new WaitForSeconds(3f);
+            //Destroy the object with the tag Player
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                Destroy(player);
+            }
+            CharacterStats.instance.ChangeScene("Intro");
+        }
+        else if (state == BattleState.FLED)
+        {
+            dialogText.text = "Has escapado!";
             yield return new WaitForSeconds(3f);
             OnBackToMenu();
-            
         }
     }
 
     public void OnBackToMenu()
     {
-        if (sceneName == "SlimeCombat" || sceneName == "PlantCombat")
+        if (sceneName == "SlimeCombat" || sceneName == "Plant1Combat" || sceneName == "Slime2Combat")
         {
             CharacterStats.instance.ChangeScene("StartScene");
         }
-        else if (sceneName == "ElecSlimeCombat")
+        else if (sceneName == "Slime3Combat" || sceneName == "ZombieCombat")
         {
             CharacterStats.instance.ChangeScene("CaveScene");
         }

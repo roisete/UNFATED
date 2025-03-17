@@ -5,12 +5,12 @@ using UnityEngine;
 public class ShowMenu : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pauseMenu = new();
+    private GameObject pauseMenu;
     private bool isGamePaused;
     private bool canInteract = true;
 
     [SerializeField]
-    private AudioSource audioSource = new();
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()

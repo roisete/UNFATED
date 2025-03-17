@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.55f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\legal\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\DAM218\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -70,22 +70,26 @@
     <Compile Include="Assets\Scripts\GameScripts\ChangeRune.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\CaveWalkEvent.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\BattleAppear.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\AppearTitle.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\EnterCave.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\RobotinJrDialog.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\BattleHUD.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\OpenGate.cs" />
     <Compile Include="Assets\Scripts\GameScripts\BattleSystem.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\END.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RedPuzzle.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GreenPuzzle.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TakeNote.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\Rest.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\ShowMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Unit.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterEvents.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\EncounterRate.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ExitStartScene.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TakeOrb.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\OpenGate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -37,9 +37,16 @@ public class CharacterStats : MonoBehaviour
         attack += (int)Random.Range(0, 6);;
     }
 
-    // For saving the position on every scene change (example: returning to overwold after a battle)
-    
-    public Dictionary<string, Vector2> scenePositions;
+    // For saving the position on every scene change (example: returning to overworld after a battle)
+    [System.Serializable]
+    public class SpawnPosition
+    {
+        public string sceneName;
+        public Vector2 position;
+    }
+
+    [SerializeField]
+    private List<SpawnPosition> scenePositionsList = new List<SpawnPosition>();
     public List<string> keyItems;
     public int itemIndex = 0;
 
@@ -61,29 +68,19 @@ public class CharacterStats : MonoBehaviour
     }
 
     //Stats Functions
-    public bool TakeDamage(int dmg)
-    {
-        health -= dmg - defense;
-
-        if (health <= 0)
-        {
-            return true;
-        }
-        return false;
-    }
 
 
     //Scene Functions
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Verifies if there is a scene position
-        if (scenePositions.ContainsKey(scene.name))
+        // Verifies if there is a saved position for the scene
+        SpawnPosition savedPosition = scenePositionsList.Find(sp => sp.sceneName == scene.name);
+        if (savedPosition != null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
-                Vector2 savedPosition = scenePositions[scene.name];
-                Vector2 spawnPosition = savedPosition + new Vector2(0, -0.5f); // Prevents looping
+                Vector2 spawnPosition = savedPosition.position + new Vector2(0, -0.5f); // Prevents looping
                 player.transform.position = spawnPosition;
             }
         }
@@ -94,11 +91,22 @@ public class CharacterStats : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    //Saves last position before changing scene
+    // Saves last position before changing scene
     public void SavePositionForCurrentScene(Vector2 position)
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        scenePositions[currentSceneName] = position;
+        SpawnPosition existingPosition = scenePositionsList.Find(sp => sp.sceneName == currentSceneName);
+
+        if (existingPosition != null)
+        {
+            // Update existing position
+            existingPosition.position = position;
+        }
+        else
+        {
+            // Add new position
+            scenePositionsList.Add(new SpawnPosition { sceneName = currentSceneName, position = position });
+        }
     }
 
     // Public method for changing scenes

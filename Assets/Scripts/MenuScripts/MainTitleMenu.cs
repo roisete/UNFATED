@@ -15,9 +15,9 @@ public class MainTitleMenu : MonoBehaviour
     /*--------------------------------------------------*/
 
     [SerializeField]
-    GameObject menuTheme = new GameObject();
+    GameObject menuTheme;
     [SerializeField]
-    GameObject playMusic = new GameObject();
+    GameObject playMusic;
 
     AudioSource menu;
     AudioSource play;

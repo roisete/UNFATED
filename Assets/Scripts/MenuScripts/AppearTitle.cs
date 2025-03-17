@@ -8,7 +8,7 @@ public class AppearMenu : MonoBehaviour
     //Script for showing the menu after a few seconds
 
     [SerializeField]
-    GameObject blackScreen = new GameObject();
+    GameObject blackScreen;
 
     [SerializeField]
     float menuAppear = 4.5f;

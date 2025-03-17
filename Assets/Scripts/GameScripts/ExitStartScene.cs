@@ -7,9 +7,8 @@ public class ExitStartScene : MonoBehaviour
 {
 
     [SerializeField]
-    string scene;
+    private string scene;
 
-    [SerializeField]
     public GameObject player = new();
 
     private void OnTriggerEnter2D(Collider2D other)

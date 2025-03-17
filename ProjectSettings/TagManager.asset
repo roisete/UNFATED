@@ -70,6 +70,9 @@ TagManager:
   - name: Objects
     uniqueID: 3885285233
     locked: 0
+  - name: Notes
+    uniqueID: 1116547115
+    locked: 0
   - name: Character
     uniqueID: 2985146141
     locked: 0

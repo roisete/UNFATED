@@ -5,7 +5,7 @@ using UnityEngine;
 public class TakeOrb : MonoBehaviour
 {
     [SerializeField]
-    private GameObject orb = new GameObject();
+    private GameObject orb;
 
     private bool isTriggered = false;
     private bool playerInRange = false;

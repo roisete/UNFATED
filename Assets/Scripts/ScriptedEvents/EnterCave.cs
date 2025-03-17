@@ -19,14 +19,10 @@ public class EnterCave : MonoBehaviour
     private GameObject dialogBox;
     [SerializeField]
     private GameObject textBox;
-    private int textIndex = 0;
     [SerializeField]
     private List<string> textValue;
     [SerializeField]
     private GameObject audioSource;
-    private bool isGamePaused = false;
-    private bool hasDialogOpened = false;
-
 
     // Start is called before the first frame update
     void Start()
