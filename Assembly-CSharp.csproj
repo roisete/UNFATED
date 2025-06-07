@@ -59,37 +59,43 @@
     <UnityVersion>2022.3.55f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\legal\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\legal\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ScriptedEvents\CaveScene\CaveWalkEvent.cs" />
     <Compile Include="Assets\Scripts\GameScripts\StandardDialogAppear.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CameraController.cs" />
+    <Compile Include="Assets\Localization\LocaleSelector.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\MainTitleMenu.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TakeGreenOrb.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\StartScene\RobotinJrDialog.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TakePurpleOrb.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ChangeRune.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\OptionsMenu.cs" />
-    <Compile Include="Assets\Scripts\ScriptedEvents\CaveWalkEvent.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\StartScene\UnlockStartCave.cs" />
     <Compile Include="Assets\Scripts\GameScripts\BattleAppear.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\AppearTitle.cs" />
-    <Compile Include="Assets\Scripts\ScriptedEvents\EnterCave.cs" />
-    <Compile Include="Assets\Scripts\ScriptedEvents\RobotinJrDialog.cs" />
+    <Compile Include="Assets\Scripts\ScriptedEvents\CaveScene\OpenGate.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\BattleHUD.cs" />
-    <Compile Include="Assets\Scripts\ScriptedEvents\OpenGate.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\GameScripts\BattleSystem.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\END.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RedPuzzle.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GreenPuzzle.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterStats.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakeNote.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\LongDialogAppear.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TakeBlueOrb.cs" />
     <Compile Include="Assets\Scripts\GameScripts\Rest.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\ShowMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Unit.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterEvents.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\OpenChest.cs" />
     <Compile Include="Assets\Scripts\GameScripts\EncounterRate.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\ExitStartScene.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakeOrb.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\CharacterChests.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TakeRedOrb.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -430,6 +436,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -936,8 +946,20 @@
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Localization.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
@@ -1036,6 +1058,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1092,6 +1118,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
       <Private>False</Private>
@@ -1132,8 +1162,8 @@
       <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
@@ -1146,6 +1176,14 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

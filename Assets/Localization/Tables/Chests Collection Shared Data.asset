@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Chests Collection Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Chests Collection
+  m_TableCollectionNameGuidString: 812175b13733b1b42ba81d2269d669cc
+  m_Entries:
+  - m_Id: 36521746432
+    m_Key: Chest1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2743705903104
+    m_Key: Chest2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3603840212992
+    m_Key: ChestPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50065278083072
+    m_Key: ChestPotion2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50090657816576
+    m_Key: ChestPotion3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366410729365504
+    m_Key: ChestEther
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366414466490368
+    m_Key: ChestEther2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366415150161920
+    m_Key: ChestEther3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367298873237504
+    m_Key: ChestNotEther
+    m_Metadata:
+      m_Items: []
+  - m_Id: 376582625402880
+    m_Key: Chest3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4173876002127872002
+  references:
+    version: 2
+    RefIds:
+    - rid: 4173876002127872002
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1749117129954

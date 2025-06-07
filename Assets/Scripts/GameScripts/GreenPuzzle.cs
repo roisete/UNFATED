@@ -8,25 +8,27 @@ public class GreenPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject lever;
     private bool isTriggered = false;
-
     [SerializeField]
     private GameObject greenOrb;
-
     [SerializeField]
     private GameObject audioSource;
-
     private bool playerInRange = false;
+    [SerializeField]
+    private GameObject interactionIcon;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        greenOrb.SetActive(false);
+        interactionIcon?.SetActive(false);
+        greenOrb?.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            interactionIcon.SetActive(true);
             playerInRange = true;
         }
     }
@@ -35,6 +37,7 @@ public class GreenPuzzle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            interactionIcon.SetActive(false);
             playerInRange = false;
         }
     }
@@ -45,8 +48,10 @@ public class GreenPuzzle : MonoBehaviour
         if (playerInRange && !isTriggered && Input.GetKeyDown(KeyCode.C))
         {
             lever.GetComponent<AudioSource>().Play();
+            interactionIcon.SetActive(false);
             StartCoroutine(OrbActivation(greenOrb));
             isTriggered = true;
+            this.gameObject.GetComponent<Collider2D>().enabled = false; //Deshabilita o colliders
         }
     }
 

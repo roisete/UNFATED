@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Galician (gl)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Galician (gl)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c1cf7743189d96243a64e0e0b38656f9
+  m_SerializeEntries:
+  - m_GUID: 5b8e504c6da0d2f41ba2962f72c3e4aa
+    m_Address: Chests Collection_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9f5f4ed59dddd846b39da64c3b7e96b
+    m_Address: HUD Collection_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0cfae19b49d89741bd0440d5ba2b1c1
+    m_Address: Dialog Collection_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: a634566a6fb5215448e77a737210e05e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7b1a64fb5e02c5b408bf89ea6661276f, type: 2}
+    - {fileID: 11400000, guid: e65f8c05f933fbb4b9bc96746a0e9677, type: 2}

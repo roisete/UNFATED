@@ -8,21 +8,10 @@ using UnityEngine.SceneManagement;
 public class BattleAppear : MonoBehaviour
 {
     [SerializeField]
-    private GameObject dialogBox;
-    [SerializeField]
-    private GameObject textBox;
-    [SerializeField]
     private string textValue;
     [SerializeField]
-    private AudioSource audioSource;
-
+    private GameObject dangerAudio;
     public GameObject player;
-
-    private void Start()
-    {
-        dialogBox.SetActive(false);
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,13 +26,12 @@ public class BattleAppear : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
-    IEnumerator Wait(){
-        dialogBox.SetActive(true);
-        audioSource.Play();
-        textBox.GetComponent<Text>().text = textValue;
-        yield return new WaitForSeconds(1f);
+    IEnumerator Wait()
+    {
+        AudioSource danger = dangerAudio.GetComponent<AudioSource>();
+        danger.Play();
+        yield return new WaitForSeconds(danger.clip.length);
     }
 }

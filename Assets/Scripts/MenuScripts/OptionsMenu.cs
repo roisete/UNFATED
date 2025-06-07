@@ -20,10 +20,7 @@ public class OptionsMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = gameBar.GetComponent<AudioSource>();
-        menu.SetActive(true);
-
-        // 
+        menu.SetActive(true); 
         if (PlayerPrefs.HasKey("SoundLevel"))
         {
             float volume = PlayerPrefs.GetFloat("SoundLevel");
@@ -39,6 +36,7 @@ public class OptionsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        audioSource = gameBar.GetComponent<AudioSource>();
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             audioSource.Play();

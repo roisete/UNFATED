@@ -9,6 +9,7 @@ TagManager:
   - Blue Orb
   - Red Orb
   - Purple Orb
+  - CameraBoundary
   layers:
   - Default
   - TransparentFX
@@ -96,4 +97,7 @@ TagManager:
     locked: 0
   - name: Bar
     uniqueID: 2000979071
+    locked: 0
+  - name: Transition
+    uniqueID: 3670389673
     locked: 0

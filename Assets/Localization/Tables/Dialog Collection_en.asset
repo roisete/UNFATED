@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialog Collection_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 138d0765725a2d348898ff5fb922aef4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 314260494065664
+    m_Localized: Bzzzzzzt... Bzzzzzzt... Bzzzzzzt...|| Is det... ...ble pul... in
+      the pac... 02%"%! &4... Starting routine d...||WARNING. Subj... wak... Canc...
+      operation. With... advised.|| WARNING. Subject waking up. Canceling operation.
+      Withdrawal is advised.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321996053127168
+    m_Localized: 'C->Confirm X->Cancel ESC->Menu '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322012385746944
+    m_Localized: Beware of the monster ahead... If you dare to battle, remember you
+      cannot escape till you defeat it... or die in vain...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324025249013760
+    m_Localized: Here's nothing...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328933775876096
+    m_Localized: Quickly, there's no time. You must collect the three orbs that seal
+      the entrance to these ruins. For the green orb, you must enter the forest and
+      find the key it hides; for the blue orb|| you must defeat the most fearsome
+      of enemies. Finally, for the red orb, you must solve the riddle of the basin.
+      Dangerous monsters will appear on your way, but you can rest|| at the bonfire
+      in these ruins. Be careful, young man, you are our only hope.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335292458180608
+    m_Localized: You've got the red orb!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335296778313728
+    m_Localized: You've got the blue orb!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335298481201152
+    m_Localized: You've got the green orb!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 368875130429440
+    m_Localized: Something sounded really loud... I should go back to the ruins and
+      enter the cave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529179506581504
+    m_Localized: Just step on the switch to reset the puzzle.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

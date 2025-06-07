@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Chests Collection_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 812175b13733b1b42ba81d2269d669cc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 36521746432
+    m_Localized: "Enhorabuena por abrir tu primer cofre! Se siente bien, eh! Pues
+      tranquilo, que esto es s\xF3lo el principio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2743705903104
+    m_Localized: Si este es tu primer cofre, empezamos mal. Mejor ve a tu izquierda
+      y haz como si no pasara nada.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3603840212992
+    m_Localized: "Has conseguido una <color=red>poci\xF3n de vida</color>!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50065278083072
+    m_Localized: Has conseguido dos <color=red>pociones de vida</color>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50090657816576
+    m_Localized: Has conseguido una <color=red>pociones de vida</color>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366410729365504
+    m_Localized: "Has conseguido una <color=purple>poci\xF3n de \xE9ter</color>!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366414466490368
+    m_Localized: "Has conseguido dos <color=purple>pociones de \xE9ter</color>!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366415150161920
+    m_Localized: "Has conseguido tres <color=purple>pociones de \xE9ter</color>!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367298873237504
+    m_Localized: "Qu\xE9 es esta <color=purple>botella</color>? La guardar\xE9 por
+      si acaso..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 376582625402880
+    m_Localized: "No dudes en usar tus pociones cuando est\xE9s en apuros, que no
+      vas a ir cargando con todo!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

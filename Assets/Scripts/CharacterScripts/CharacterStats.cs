@@ -47,7 +47,7 @@ public class CharacterStats : MonoBehaviour
         attack += (int)Random.Range(0, 6);;
     }
 
-    // For saving the position on every scene change (example: returning to overworld after a battle)
+    //Para gardar a posición do xogador ao cambiar de escena
     [System.Serializable]
     public class SpawnPosition
     {
@@ -58,7 +58,7 @@ public class CharacterStats : MonoBehaviour
     [SerializeField]
     private List<SpawnPosition> scenePositionsList = new List<SpawnPosition>();
     public List<string> keyItems;
-    public int itemIndex = 0;
+    public List<string> healthItems;
 
     public static CharacterStats instance;
 
@@ -67,30 +67,30 @@ public class CharacterStats : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            // If an instance already exists, destroy this duplicate
+            //Destrúe un duplicado
             Destroy(gameObject);
         }
     }
 
-    //Stats Functions
+    //FUNCIÓNS DE STATS
 
 
-    //Scene Functions
+    //FUNCIÓNS DE ESCENAS
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Verifies if there is a saved position for the scene
+        //Verifica se hai unha posición guardada para a escena cargada
         SpawnPosition savedPosition = scenePositionsList.Find(sp => sp.sceneName == scene.name);
         if (savedPosition != null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
-                Vector2 spawnPosition = savedPosition.position + new Vector2(0, -0.5f); // Prevents looping
+                Vector2 spawnPosition = savedPosition.position + new Vector2(0, -0.5f); // Prevén que o xogador non spawnee no trigger
                 player.transform.position = spawnPosition;
             }
         }
@@ -101,7 +101,7 @@ public class CharacterStats : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Saves last position before changing scene
+    //Garda a posición do xogador na escena actual
     public void SavePositionForCurrentScene(Vector2 position)
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -109,17 +109,17 @@ public class CharacterStats : MonoBehaviour
 
         if (existingPosition != null)
         {
-            // Update existing position
+            //Actualiza a posición existente
             existingPosition.position = position;
         }
         else
         {
-            // Add new position
+            //Engade unha nova posición á lista de spawns
             scenePositionsList.Add(new SpawnPosition { sceneName = currentSceneName, position = position });
         }
     }
 
-    // Public method for changing scenes
+    //Cambio de escena e garda a posición do xogador
     public void ChangeScene(string sceneName)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -127,6 +127,6 @@ public class CharacterStats : MonoBehaviour
         {
             SavePositionForCurrentScene(player.transform.position);
         }
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
     }
 }

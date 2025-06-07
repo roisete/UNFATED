@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: HUD Collection Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: HUD Collection
+  m_TableCollectionNameGuidString: dd1057673ed6021449f224a80bebd384
+  m_Entries:
+  - m_Id: 46761068306432
+    m_Key: volumen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301133727637504
+    m_Key: ESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 392961193779200
+    m_Key: Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405329168670720
+    m_Key: inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 531721166725120
+    m_Key: Read
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4173875958902685720
+  references:
+    version: 2
+    RefIds:
+    - rid: 4173875958902685720
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1748954665067

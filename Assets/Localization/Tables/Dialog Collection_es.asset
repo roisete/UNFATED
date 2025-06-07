@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialog Collection_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 138d0765725a2d348898ff5fb922aef4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 314260494065664
+    m_Localized: "Bzzzzzzt... Bzzzzzzt... Bzzzzzzt...||Se det... ...so est... en
+      el pac... 02%\"%!&4... Iniciando rutina d...||AVISO. Suje... desp... Canc...
+      operaci\xF3n. Se acon... retirada.||AVISO. Sujeto despert\xE1ndose. Cancelando
+      operaci\xF3n. Se aconseja retirada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321996053127168
+    m_Localized: "C->Confirmar X->Cancelar ESC->Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322012385746944
+    m_Localized: "Cuidado con el monstruo que se cierne m\xE1s adelante... No podr\xE1s
+      escapar hasta que lo derrotes... o mueras en vano..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324025249013760
+    m_Localized: "Nada por aqu\xED..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328933775876096
+    m_Localized: "R\xE1pido, no hay tiempo. Debes recoger los tres orbes que sellan
+      la entrada a estas ruinas. Para el orbe verde deber\xE1s adentrarte en el bosque
+      y encontrar la llave que oculta, para el orbe azul||deber\xE1s derrotar al
+      m\xE1s temible de los enemigos. Finalmente, para el orbe rojo deber\xE1s resolver
+      el acertijo de la cuenca. En tu camino aparecer\xE1n peligrosos montruos, pero
+      podr\xE1s descansar en||la hoguera de estas ruinas. Ten cuidado joven, eres
+      nuestra \xFAnica esperanza."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335292458180608
+    m_Localized: "\xA1Has obtenido el orbe rojo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335296778313728
+    m_Localized: "\xA1Has obtenido el orbe azul!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335298481201152
+    m_Localized: "\xA1Has obtenido el orbe verde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 368875130429440
+    m_Localized: "Algo ha sonado muy fuerte... Deber\xEDa volver a las ruinas y entrar
+      en la cueva."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529179506581504
+    m_Localized: "Para deshacer el puzzle simplemente pise el bot\xF3n."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

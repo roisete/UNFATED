@@ -1,15 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 20f;
-
     public Vector2 direction = Vector3.zero;
     private Vector2 posChar = Vector3.zero;
     private Vector2 posMenu = Vector3.zero;
@@ -79,7 +74,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RightUp", false);
             animator.SetBool("RightDown", false);
         }
-        else if (direction.x < 0 && direction.y < 0)
+        else if ((direction.x < 0 && direction.y < 0) || (direction.x < 0 && direction.y == 0))
         {
             animator.SetBool("Up", false);
             animator.SetBool("Down", false);
@@ -96,7 +91,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RightUp", true);
             animator.SetBool("RightDown", false);
         }
-        else if (direction.x > 0 && direction.y < 0) {
+        else if ((direction.x > 0 && direction.y < 0)  || (direction.x > 0 && direction.y == 0))
+        {
             animator.SetBool("Up", false);
             animator.SetBool("Down", false);
             animator.SetBool("LeftUp", false);
