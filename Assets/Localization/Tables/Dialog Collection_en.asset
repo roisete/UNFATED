@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 324025249013760
-    m_Localized: Here's nothing...
+    m_Localized: Here's nothing.
     m_Metadata:
       m_Items: []
   - m_Id: 328933775876096
@@ -60,12 +60,37 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 368875130429440
-    m_Localized: Something sounded really loud... I should go back to the ruins and
+    m_Localized: Something sounded really loud. I should go back to the ruins and
       enter the cave.
     m_Metadata:
       m_Items: []
   - m_Id: 529179506581504
     m_Localized: Just step on the switch to reset the puzzle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1483487848898560
+    m_Localized: What is this!? I don't understand anything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486395399151616
+    m_Localized: I'm just seeing a bunch of numbers and letters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1598368050421760
+    m_Localized: It doesn't look it's gonna open by itself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1599811939573760
+    m_Localized: You've got the purple orb!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616604355731456
+    m_Localized: You press the button, but it doesn't do anything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1617746666037248
+    m_Localized: The purple orb makes contact with these machine... Out of the blue,
+      the gates are open!
     m_Metadata:
       m_Items: []
   references:

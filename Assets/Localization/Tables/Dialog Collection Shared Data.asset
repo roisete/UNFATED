@@ -55,6 +55,30 @@ MonoBehaviour:
     m_Key: resetSign
     m_Metadata:
       m_Items: []
+  - m_Id: 1483487848898560
+    m_Key: robotinCaveInteract
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486395399151616
+    m_Key: monitorRadarInteract
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1598368050421760
+    m_Key: gatePortal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1599811939573760
+    m_Key: purpleOrb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616604355731456
+    m_Key: lockedString
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1617746666037248
+    m_Key: unlockedString
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

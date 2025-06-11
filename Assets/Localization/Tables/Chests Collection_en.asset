@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 367298873237504
-    m_Localized: What's this <color=purple>bottle</color>? I'll save it for later.
+    m_Localized: You've obtained such a strange <color=purple>bottle</color>...
     m_Metadata:
       m_Items: []
   - m_Id: 376582625402880

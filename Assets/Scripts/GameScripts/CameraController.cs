@@ -14,38 +14,32 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private CinemachineConfiner cinemachineConfiner;
 
-    // Reference to the player
+    //Referencia ao player
     private Transform playerTransform;
 
     private Vector2 posMenu = Vector3.zero;
 
     void Awake()
     {
-        // Find the player when the scene loads
         FindAndSetPlayer();
-
-        // Subscribe to the sceneLoaded event to handle scene changes
+        //Configura a camera para seguir ao xogador
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // When a new scene is loaded, find the player again
         FindAndSetPlayer();
-
-        // Update the CinemachineConfiner with the new scene's collider
         UpdateCinemachineConfiner();
     }
 
-    // Find the player and set it as the follow target
+    //Encontra ao xogador cando se carga a escena
     private void FindAndSetPlayer()
     {
-        // Try to find the player using the PlayerController singleton
         if (PlayerController.instance != null)
         {
             playerTransform = PlayerController.instance.transform;
 
-            // Set the player as the follow target for the virtual camera
+            //Configura a cámara para seguir ao xogador
             if (virtualCamera != null)
             {
                 virtualCamera.Follow = playerTransform;
@@ -54,42 +48,39 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            // If player not found, try again after a short delay
+            //Se non se encontra, vólveo intentar
             StartCoroutine(FindPlayerWithDelay());
         }
     }
 
-    // Coroutine to find the player with a delay
     private IEnumerator FindPlayerWithDelay()
     {
         yield return new WaitForSeconds(0.2f);
         FindAndSetPlayer();
     }
 
-    // Update the CinemachineConfiner with the new scene's collider
+    //Actualiza o collider da cámara
     private void UpdateCinemachineConfiner()
     {
         if (cinemachineConfiner != null)
         {
-            // Find the new boundary collider in the scene
             PolygonCollider2D newBoundary = GameObject.FindWithTag("CameraBoundary")?.GetComponent<PolygonCollider2D>();
 
             if (newBoundary != null)
             {
-                // Update the CinemachineConfiner with the new boundary
+                //Actualiza o CinemachineConfiner
                 cinemachineConfiner.m_BoundingShape2D = newBoundary;
             }
         }
     }
 
-    // Called when the object is destroyed
     void OnDestroy()
     {
-        // Unsubscribe from the event when the object is destroyed
+        //Desactiva a cámara
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Public method to manually set the follow target
+    //Método manual
     public void SetFollowTarget(Transform target)
     {
         if (virtualCamera != null && target != null)

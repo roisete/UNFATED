@@ -7,21 +7,10 @@ public class PlayerController : MonoBehaviour
     private float speed = 20f;
     public Vector2 direction = Vector3.zero;
     private Vector2 posChar = Vector3.zero;
-    private Vector2 posMenu = Vector3.zero;
     private Rigidbody2D rb2d;
     private Animator animator;
 
     public static PlayerController instance;
-    
-    // Position for each scene
-    [System.Serializable]
-    public class SpawnPosition{
-        public string sceneName;
-        public Vector2 position;
-    }
-
-    [SerializeField]
-    private List<SpawnPosition> scenePositionsList = new List<SpawnPosition>();
 
     void Awake()
     {

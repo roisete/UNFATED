@@ -11,8 +11,7 @@ public class MainTitleMenu : MonoBehaviour
     [SerializeField]
     private GameObject menuArrow;
 
-    /*MUSIC*/
-    /*--------------------------------------------------*/
+    //MUSIC
 
     [SerializeField]
     GameObject menuTheme;
@@ -22,7 +21,6 @@ public class MainTitleMenu : MonoBehaviour
     AudioSource menu;
     AudioSource play;
 
-    /*--------------------------------------------------*/
 
     [SerializeField]
     private GameObject optionsMenu;

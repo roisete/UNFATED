@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 324025249013760
-    m_Localized: "Nada por aqu\xED..."
+    m_Localized: "Nada por aqu\xED."
     m_Metadata:
       m_Items: []
   - m_Id: 328933775876096
@@ -61,12 +61,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 368875130429440
-    m_Localized: "Algo ha sonado muy fuerte... Deber\xEDa volver a las ruinas y entrar
+    m_Localized: "Algo ha sonado muy fuerte. Deber\xEDa volver a las ruinas y entrar
       en la cueva."
     m_Metadata:
       m_Items: []
   - m_Id: 529179506581504
     m_Localized: "Para deshacer el puzzle simplemente pise el bot\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1483487848898560
+    m_Localized: "Qu\xE9 es esto? No entiendo nada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486395399151616
+    m_Localized: "S\xF3lo veo un mont\xF3n de n\xFAmeros y letras indescifrables."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1598368050421760
+    m_Localized: No parece que se vaya abrir sola.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1599811939573760
+    m_Localized: "\xA1Has obtenido el orbe morado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616604355731456
+    m_Localized: "Pulsas el bot\xF3n, pero de lo deteriorada que est\xE1 no sirve
+      para nada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1617746666037248
+    m_Localized: "El orbe morado hace contacto con este aparato...||Por alg\xFAn
+      motivo, la puerta se ha abierto!"
     m_Metadata:
       m_Items: []
   references:

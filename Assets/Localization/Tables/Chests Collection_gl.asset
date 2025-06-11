@@ -53,8 +53,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 367298873237504
-    m_Localized: Que ten esta <color=purple>botella</color>? Gardareina non vaia
-      ser...
+    m_Localized: "Obt\xE9s unha <color=purple>botella</color> moi rara..."
     m_Metadata:
       m_Items: []
   - m_Id: 376582625402880

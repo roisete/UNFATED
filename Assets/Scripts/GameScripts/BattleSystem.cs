@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Manages all the mechanics in a classic turn-based RPG battle
-
+//Estados nun turno
 public enum BattleState {
     START,
     PLAYERTURN,
@@ -41,7 +40,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        // Set up enemies, players, and any other necessary game objects
+        //Setea todo
         GameObject enemyGO = Instantiate(enemy, enemyPosition);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
@@ -92,17 +91,17 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
-        //Hurt animation
+        //Animación de danado
         enemyUnit.GetComponent<Animator>().SetTrigger("Hurt");
         enemyUnit.GetComponent<AudioSource>().Play();
-        //Damage the enemy
+        //Faille pupa
         bool isEnemyDead = enemyUnit.TakeDamage(CharacterStats.instance.attack);
         dialogText.text = "Has hecho " + CharacterStats.instance.attack + " de daño a " + enemyUnit.unitName + "!";
         CharacterStats.instance.defense = CharacterStats.instance.initialDefense;
         yield return new WaitForSeconds(1f);
 
-        //Check if the enemy is dead
-        //Change state based on what happened
+        //Check si morreu
+        //Cambiamos de estado dependendo do que pasou
         if (isEnemyDead)
         {
             state = BattleState.WON;
@@ -185,7 +184,6 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            //Death animation
             enemyUnit.GetComponent<Animator>().SetTrigger("Death");
             enemyUnit.GetComponent<AudioSource>().Play();
             dialogText.text = "Ganaste!";
@@ -202,13 +200,13 @@ public class BattleSystem : MonoBehaviour
         {
             dialogText.text = "Has sido derrotado...";
             yield return new WaitForSeconds(3f);
-            //Destroy the object with the tag Player
+            //Destruimos instancia para evitar duplicados
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
                 Destroy(player);
             }
-            CharacterStats.instance.ChangeScene("Intro");
+            SceneSpawnManager.instance.ChangeScene("Intro");
         }
         else if (state == BattleState.FLED)
         {
@@ -222,11 +220,11 @@ public class BattleSystem : MonoBehaviour
     {
         if (sceneName == "SlimeCombat" || sceneName == "Plant1Combat" || sceneName == "Slime2Combat")
         {
-            CharacterStats.instance.ChangeScene("StartScene");
+            SceneSpawnManager.instance.ChangeScene("StartScene");
         }
         else if (sceneName == "Slime3Combat" || sceneName == "Zombie2Combat")
         {
-            CharacterStats.instance.ChangeScene("CaveScene");
+            SceneSpawnManager.instance.ChangeScene("CaveScene");
         }
     }
 }

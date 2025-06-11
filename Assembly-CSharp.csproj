@@ -69,10 +69,10 @@
     <Compile Include="Assets\Scripts\GameScripts\CameraController.cs" />
     <Compile Include="Assets\Localization\LocaleSelector.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\MainTitleMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakeGreenOrb.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\InvokeUI.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\StartScene\RobotinJrDialog.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakePurpleOrb.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ChangeRune.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\SceneSpawnManager.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\ScriptedEvents\StartScene\UnlockStartCave.cs" />
     <Compile Include="Assets\Scripts\GameScripts\BattleAppear.cs" />
@@ -86,7 +86,7 @@
     <Compile Include="Assets\Scripts\GameScripts\GreenPuzzle.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\GameScripts\LongDialogAppear.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakeBlueOrb.cs" />
+    <Compile Include="Assets\Scripts\CharacterScripts\Items.cs" />
     <Compile Include="Assets\Scripts\GameScripts\Rest.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\ShowMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Unit.cs" />
@@ -94,8 +94,8 @@
     <Compile Include="Assets\Scripts\GameScripts\OpenChest.cs" />
     <Compile Include="Assets\Scripts\GameScripts\EncounterRate.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\KeyItemPickUp.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterChests.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\TakeRedOrb.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

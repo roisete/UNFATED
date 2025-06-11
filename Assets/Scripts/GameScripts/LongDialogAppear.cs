@@ -74,7 +74,6 @@ public class LongDialogAppear : MonoBehaviour
         Time.timeScale = 1;
         isGamePaused = false;
         textIndex = 0;
-        Debug.Log("Diálogo pechado");
     }
 
     void Update()

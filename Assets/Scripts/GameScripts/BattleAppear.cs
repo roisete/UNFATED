@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.TextCore.Text;
-using UnityEngine.SceneManagement;
 
 public class BattleAppear : MonoBehaviour
 {
@@ -19,7 +15,7 @@ public class BattleAppear : MonoBehaviour
         {
             StartCoroutine(Wait());
             gameObject.SetActive(false);
-            CharacterStats.instance.ChangeScene("Plant1Combat");
+            SceneSpawnManager.instance.ChangeScene("Plant1Combat");
             CharacterEvents.instance.plantDefeated = true;
         }
         if (CharacterEvents.instance.plantDefeated)

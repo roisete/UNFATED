@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CaveWalkEvent : MonoBehaviour
@@ -7,7 +5,7 @@ public class CaveWalkEvent : MonoBehaviour
     [SerializeField]
     private GameObject robotin;
     [SerializeField]
-    private GameObject gate;
+    private GameObject gateSound;
     [SerializeField]
     private float speed = 2;
 
@@ -33,7 +31,7 @@ public class CaveWalkEvent : MonoBehaviour
 
         if(pos.y > -1)
         {
-            gate.GetComponent<AudioSource>().Play();
+            gateSound.GetComponent<AudioSource>().Play();
             Destroy(robotin);
             CharacterEvents.instance.robotinWalkTriggered = true;
         }

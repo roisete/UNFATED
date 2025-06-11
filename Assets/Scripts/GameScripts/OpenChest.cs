@@ -42,12 +42,12 @@ public class OpenChest : MonoBehaviour
             dialogBox.SetActive(false);
 
         if (localizedStringEvent != null && textBox != null)
-        {
             localizedStringEvent.OnUpdateString.AddListener(UpdateDialogText);
-        }
 
-        // Check if chest was previously opened
-        hasBeenOpened = CharacterEvents.instance.HasChestKey(chestID);
+        //Chequea se se abriu o cofre anteriormente
+        hasBeenOpened = Items.instance.HasChestKey(chestID);
+        if (hasBeenOpened)
+            cO.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,41 +68,27 @@ public class OpenChest : MonoBehaviour
             if (interactionIcon != null)
                 interactionIcon.SetActive(false);
             if (isGamePaused)
-            {
                 HideDialog();
-            }
         }
     }
 
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.C))
-        {
             if (!isGamePaused)
-            {
                 ShowDialog();
-            }
             else
-            {
                 HideDialog();
-            }
-        }
         else if (isGamePaused && Input.GetKeyDown(KeyCode.X))
-        {
             HideDialog();
-        }
     }
 
     private void ShowDialog()
     {
         if (!hasBeenOpened)
-        {
             FirstTimeOpen();
-        }
         else
-        {
             ShowAlreadyOpenedDialog();
-        }
     }
 
     private void FirstTimeOpen()
@@ -117,21 +103,17 @@ public class OpenChest : MonoBehaviour
 
             localizedStringEvent.RefreshString();
 
-            // Add items to inventory
+            //Añade itemss
             for (int i = 0; i < itemQuantity; i++)
             {
                 if (itemType == "Health")
-                {
-                    CharacterStats.instance.healthItems.Add(item);
-                }
+                    Items.instance.healthItems.Add(item);
                 else if (itemType == "KeyItem")
-                {
-                    CharacterStats.instance.keyItems.Add(item);
-                }
+                    Items.instance.keyItems.Add(item);
             }
 
-            // Mark chest as opened
-            CharacterEvents.instance.AddChestKey(chestID);
+            //Marca o cofre como aberto
+            Items.instance.AddChestKey(chestID);
             hasBeenOpened = true;
             cO.enabled = true;
             cN.enabled = false;

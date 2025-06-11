@@ -86,9 +86,9 @@ public class UnlockStartCave : MonoBehaviour
 
     private void ThreeOrbs()
     {
-        if (CharacterStats.instance.keyItems.Contains("Green Orb") &&
-            CharacterStats.instance.keyItems.Contains("Red Orb") &&
-            CharacterStats.instance.keyItems.Contains("Blue Orb"))
+        if (Items.instance.keyItems.Contains("Green Orb") &&
+            Items.instance.keyItems.Contains("Red Orb") &&
+            Items.instance.keyItems.Contains("Blue Orb"))
         {
             Debug.Log("3 orbes");
             caveOpened = true;

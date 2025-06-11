@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: LER
     m_Metadata:
       m_Items: []
+  - m_Id: 2700527901286400
+    m_Localized: '- HISTORIA: Sen enemigos. Resolve puzzles tranquilo.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738847112962048
+    m_Localized: "- F\xC1CIL: Spawn e dano dos enemigos menor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738859905589248
+    m_Localized: '- NORMAL: A dificultade coa que se conceviu o xogo.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738962347270144
+    m_Localized: "- DIF\xCDCIL: Maior spawn e dano dos enemigos."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

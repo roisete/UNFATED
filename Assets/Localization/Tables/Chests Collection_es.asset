@@ -53,8 +53,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 367298873237504
-    m_Localized: "Qu\xE9 es esta <color=purple>botella</color>? La guardar\xE9 por
-      si acaso..."
+    m_Localized: Obtienes una <color=purple>botella</color> muy rara...
     m_Metadata:
       m_Items: []
   - m_Id: 376582625402880

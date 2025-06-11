@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: LEER
     m_Metadata:
       m_Items: []
+  - m_Id: 2700527901286400
+    m_Localized: '- HISTORIA: Sin enemigos. Resuelve puzzles tranquilo.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738847112962048
+    m_Localized: "- F\xC1CIL: Spawn y fuerza de los enemigos reducido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738859905589248
+    m_Localized: "- NORMAL: La dificultad con la que se concivi\xF3 el juego."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2738962347270144
+    m_Localized: "- DIF\xCDCIL: Spawn y fuerza de enemigos mayor."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
