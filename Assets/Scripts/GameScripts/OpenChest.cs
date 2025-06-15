@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Localization.Components;
+using System.Collections;
 
 public class OpenChest : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource openChest;
     [SerializeField]
     private GameObject dialogBox;
     [SerializeField]
@@ -18,6 +21,8 @@ public class OpenChest : MonoBehaviour
     private GameObject chestNotOpened;
     [SerializeField]
     private GameObject chestOpened;
+    [SerializeField]
+    private Animator anim;
     [SerializeField]
     private GameObject interactionIcon;
     public int chestID;
@@ -47,7 +52,10 @@ public class OpenChest : MonoBehaviour
         //Chequea se se abriu o cofre anteriormente
         hasBeenOpened = Items.instance.HasChestKey(chestID);
         if (hasBeenOpened)
+        {
             cO.enabled = true;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,14 +94,16 @@ public class OpenChest : MonoBehaviour
     private void ShowDialog()
     {
         if (!hasBeenOpened)
-            FirstTimeOpen();
+        {
+            StartCoroutine(ChestAnim());
+            Invoke("Open", 0.6f);
+        }
         else
             ShowAlreadyOpenedDialog();
     }
 
-    private void FirstTimeOpen()
+    void Open()
     {
-        SpriteRenderer cN = chestNotOpened.GetComponent<SpriteRenderer>();
         SpriteRenderer cO = chestOpened.GetComponent<SpriteRenderer>();
         if (dialogBox != null && textBox != null)
         {
@@ -116,7 +126,6 @@ public class OpenChest : MonoBehaviour
             Items.instance.AddChestKey(chestID);
             hasBeenOpened = true;
             cO.enabled = true;
-            cN.enabled = false;
             Time.timeScale = 0;
             isGamePaused = true;
             PlayDialogSound();
@@ -131,7 +140,7 @@ public class OpenChest : MonoBehaviour
             alreadyOpenedStringEvent.OnUpdateString.AddListener(UpdateDialogText);
             alreadyOpenedStringEvent.RefreshString();
             alreadyOpenedStringEvent.OnUpdateString.RemoveListener(UpdateDialogText);
-            
+
             Time.timeScale = 0;
             isGamePaused = true;
             PlayDialogSound();
@@ -162,5 +171,12 @@ public class OpenChest : MonoBehaviour
             if (source != null)
                 source.Play();
         }
+    }
+
+    private IEnumerator ChestAnim()
+    {
+        openChest.Play();
+        anim.SetTrigger("Open");
+        yield return new WaitForSeconds(0.417f);
     }
 }

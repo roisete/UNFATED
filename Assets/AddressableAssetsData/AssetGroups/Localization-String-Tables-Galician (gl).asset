@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-gl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9450bdd969c83f4c8ae223a6fd642cc
+    m_Address: Combat Collection_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c9f5f4ed59dddd846b39da64c3b7e96b
     m_Address: HUD Collection_gl
     m_ReadOnly: 1

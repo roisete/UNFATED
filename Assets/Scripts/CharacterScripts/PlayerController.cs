@@ -5,10 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 20f;
-    public Vector2 direction = Vector3.zero;
-    private Vector2 posChar = Vector3.zero;
+    public Vector2 direction = Vector2.zero;
+    private Vector2 posChar = Vector2.zero;
     private Rigidbody2D rb2d;
-    private Animator animator;
+    public Animator animator;
 
     public static PlayerController instance;
 

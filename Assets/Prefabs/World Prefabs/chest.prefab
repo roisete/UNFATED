@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed0bb8f2ac8ce4b90bab18930b8293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openChest: {fileID: 0}
   dialogBox: {fileID: 0}
   textBox: {fileID: 0}
   localizedStringEvent: {fileID: 8608473453923776782}
@@ -52,6 +53,7 @@ MonoBehaviour:
   audioSourceDialog: {fileID: 0}
   chestNotOpened: {fileID: 5690834028553157725}
   chestOpened: {fileID: 2165114255993712183}
+  anim: {fileID: 7284909311605113259}
   interactionIcon: {fileID: 0}
   chestID: 1
   item: healthPotion
@@ -342,6 +344,7 @@ GameObject:
   - component: {fileID: 9221052912785880627}
   - component: {fileID: 6117065338251466050}
   - component: {fileID: 6909045814059449401}
+  - component: {fileID: 7284909311605113259}
   m_Layer: 0
   m_Name: chest
   m_TagString: Untagged
@@ -406,8 +409,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1116547115
-  m_SortingLayer: 9
+  m_SortingLayerID: -409682063
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1307421105, guid: f5c506f0c7c1dc2439b7e7a486cfaa4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -566,3 +569,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7284909311605113259
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690834028553157725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14fdba0f88be9ba4783baf2ce59f5920, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

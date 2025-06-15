@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combats/Zombie2Combat.unity
     guid: ce88a597fe1435a49a58e803d491b0d1
+  - enabled: 1
+    path: Assets/Scenes/StartHut.unity
+    guid: 8b5fd4200d67b9f43a305334e70db323
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d68d05db04885a043b9a680f6b360047, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 5ed86649996f8164c9693d4adb166a35, type: 2}

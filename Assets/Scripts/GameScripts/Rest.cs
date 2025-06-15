@@ -13,8 +13,8 @@ public class Rest : MonoBehaviour
         if (collision.tag == "Player")
         {
             audioSource.Play();
-            //Recover your HP
             CharacterStats.instance.health = CharacterStats.instance.maxHealth;
+            CharacterStats.instance.mana = CharacterStats.instance.maxMana;
         }
     }
 }

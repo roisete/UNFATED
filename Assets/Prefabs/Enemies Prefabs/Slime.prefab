@@ -120,12 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f594a5b80f91e42bd04c25107611ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Slime Verde
-  unitHealth: 6
-  unitMaxHealth: 6
-  unitDefense: 1
-  unitAttack: 1
-  unitExp: 4
+  unitName: Green Slime
+  unitHealth: 10
+  unitMaxHealth: 10
+  unitDefense: 2
+  unitMDefense: 1
+  unitAttack: 3
+  unitExp: 20
 --- !u!82 &5344065259061277420
 AudioSource:
   m_ObjectHideFlags: 0

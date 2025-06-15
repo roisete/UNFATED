@@ -3,11 +3,6 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-
-    public bool greenOrb = false;
-    public bool redOrb = false;
-    public bool blueOrb = false;
-    public bool purpleOrb = false;
     public List<int> chestKeys = new();
     public List<string> keyItems;
     public List<string> healthItems;
@@ -27,17 +22,27 @@ public class Items : MonoBehaviour
         }
     }
 
-    //Método para saber se tes un item comprobando o seu tag
+    //Método para saber se tes un item comprobando o seu tag. Cambiar por parámetro string
     public bool HasTagItem(GameObject kItem)
     {
         foreach (string item in keyItems)
         {
             if (kItem.CompareTag(item))
-            {
                 return true;
-            }
         }
         return false;
+    }
+
+    //Comprobar se tes un item común (pocións, etc.)
+    public bool HasNormalItem(string nItem)
+    {
+        foreach (string item in healthItems)
+        {
+            if (nItem == item)
+                return true;
+        }
+        return false;
+
     }
 
     //Métodos para controlar os cofres

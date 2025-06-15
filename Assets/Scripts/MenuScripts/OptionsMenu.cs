@@ -3,9 +3,19 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    [Header("Menu")]
+    [SerializeField]
+    private GameObject menu;
+    [SerializeField]
+    private GameObject gameBar;
+    private AudioSource audioSource;
+    private const string SOUND_LEVEL_KEY = "SoundLevel";
+    private const float VOLUME_STEP = 0.05f;
     [SerializeField]
     private Image sound;
     [SerializeField]
+
+    [Header("Difficulty")]
     private Text story;
     [SerializeField]
     private Text easy;
@@ -14,12 +24,7 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField]
     private Text hard;
     [SerializeField]
-    private GameObject menu;
-    [SerializeField]
-    private GameObject gameBar;
-    private AudioSource audioSource;
-    private const string SOUND_LEVEL_KEY = "SoundLevel";
-    private const float VOLUME_STEP = 0.05f;
+    
 
     void Start()
     {
@@ -66,55 +71,55 @@ public class OptionsMenu : MonoBehaviour
 
 
         //Subir/baixar dificultade
-        if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            Debug.Log("HISTORIA");
-            audioSource.Play();
-            CharacterStats.instance.difficulty = 0;
-
-        }
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
-            Debug.Log("FÁCIL");
+            Debug.Log("HISTORIA");
             audioSource.Play();
             CharacterStats.instance.difficulty = 1;
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
-            Debug.Log("NORMAL");
+            Debug.Log("FÁCIL");
             audioSource.Play();
             CharacterStats.instance.difficulty = 2;
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
-            Debug.Log("DIFÍCIL");
+            Debug.Log("NORMAL");
             audioSource.Play();
             CharacterStats.instance.difficulty = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            Debug.Log("DIFÍCIL");
+            audioSource.Play();
+            CharacterStats.instance.difficulty = 4;
         }
 
         //Que texto mostrar
         switch (CharacterStats.instance.difficulty)
         {
-            case 0:
+            case 1:
                 story.enabled = true;
                 easy.enabled = false;
                 normal.enabled = false;
                 hard.enabled = false;
                 break;
-            case 1:
+            case 2:
                 story.enabled = false;
                 easy.enabled = true;
                 normal.enabled = false;
                 hard.enabled = false;
                 break;
-            case 2:
+            case 3:
                 story.enabled = false;
                 easy.enabled = false;
                 normal.enabled = true;
                 hard.enabled = false;
                 break;
-            case 3:
+            case 4:
                 story.enabled = false;
                 easy.enabled = false;
                 normal.enabled = false;

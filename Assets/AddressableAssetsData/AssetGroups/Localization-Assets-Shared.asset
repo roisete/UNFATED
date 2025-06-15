@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c71057a2119297448bb05f84f13d462
+    m_Address: Assets/Localization/Tables/Combat Collection Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 812175b13733b1b42ba81d2269d669cc
     m_Address: Assets/Localization/Tables/Chests Collection Shared Data.asset
     m_ReadOnly: 1

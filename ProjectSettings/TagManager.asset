@@ -10,6 +10,9 @@ TagManager:
   - Red Orb
   - Purple Orb
   - CameraBoundary
+  - Health
+  - Mana
+  - Exclamation
   layers:
   - Default
   - TransparentFX

@@ -8,9 +8,6 @@ public class UnlockStartCave : MonoBehaviour
     [SerializeField]
     private GameObject caveSound;
 
-    [SerializeField]
-    private List<GameObject> orbs = new();
-
     private bool caveOpened = false;
 
     [SerializeField]
@@ -46,7 +43,6 @@ public class UnlockStartCave : MonoBehaviour
         {
             caveSound.SetActive(true);
             caveSound.GetComponent<AudioSource>().Play();
-            DeactivateOrbs();
             CharacterEvents.instance.caveOpenedTriggered = true;
             enterCave.SetActive(true);
             //Mostrar diálogo 
@@ -57,7 +53,6 @@ public class UnlockStartCave : MonoBehaviour
         {
             enterCave.SetActive(true);
             caveSound.SetActive(true);
-            DeactivateOrbs();
         }
 
         //Control do diálogo
@@ -92,14 +87,6 @@ public class UnlockStartCave : MonoBehaviour
         {
             Debug.Log("3 orbes");
             caveOpened = true;
-        }
-    }
-
-    private void DeactivateOrbs()
-    {
-        foreach (var orb in orbs)
-        {
-            orb.SetActive(false);
         }
     }
 

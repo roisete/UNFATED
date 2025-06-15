@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Combat Collection_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 2c71057a2119297448bb05f84f13d462, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 4173876187023278083
+  m_TableData:
+  - m_Id: 17159102464
+    m_Localized: A enemy appears!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566117998592
+    m_Localized: 'Your turn, choose wisely:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1170764668928
+    m_Localized: You're out of energy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1492048355328
+    m_Localized: There goes an energy bolt!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126231314432
+    m_Localized: You've restored some life points.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4540036489216
+    m_Localized: You defend yourself...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4763475451904
+    m_Localized: Your defence increase!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5536129163264
+    m_Localized: It wasn't of any use!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812617682944
+    m_Localized: You try to escape...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5980188516352
+    m_Localized: You've succesfully fleed from battle!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6144810754048
+    m_Localized: You're not going anywhere!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6386029371392
+    m_Localized: You've won!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6518439354368
+    m_Localized: You've been defeated...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7175397384192
+    m_Localized: You've just leveled up!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49812787634176
+    m_Localized: You punch with all you've got!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52262739320832
+    m_Localized: It wasn't THAT urgent...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52666294280192
+    m_Localized: The enemy counterattacks!
+    m_Metadata:
+      m_Items:
+      - rid: 4173876187023278083
+  - m_Id: 112210835873792
+    m_Localized: You don't have one of those!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4173876187023278083
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 52666294280192

@@ -62,6 +62,15 @@ MonoBehaviour:
       be carrying everything!
     m_Metadata:
       m_Items: []
+  - m_Id: 3498352151044096
+    m_Localized: I was a glorious chest in this chaos. Look at me now. It's your
+      fault I'm opened like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3498853781413888
+    m_Localized: A light in this hole could be great.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

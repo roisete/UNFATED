@@ -24,6 +24,12 @@ MonoBehaviour:
     - Locale-es
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af2c1ead835aae44c9e91162d7c7d519
+    m_Address: Combat Collection_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b9c6d4fb9c54d894fbcdafb531752232
     m_Address: Chests Collection_es
     m_ReadOnly: 1

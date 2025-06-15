@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainTitleMenu : MonoBehaviour
 {
+    //COIDADO CON PAUSAR, TER A FLECHA ANIMADA A HORA DE ESCOLLER A OPCION DE XOGAR. SOLUCIONARASE PRONTO
+    [Header("Menu")]
     [SerializeField]
     private List<GameObject> menuOptions;
-
     [SerializeField]
     private GameObject menuArrow;
+    [SerializeField]
+    private GameObject optionsMenu;
+    private int index = 0;
+    private Vector2 pos = new();
 
-    //MUSIC
-
+    [Header("Music")]
     [SerializeField]
     GameObject menuTheme;
     [SerializeField]
@@ -20,16 +24,7 @@ public class MainTitleMenu : MonoBehaviour
 
     AudioSource menu;
     AudioSource play;
-
-
-    [SerializeField]
-    private GameObject optionsMenu;
-
-    private int index = 0;
-
     private AudioSource audioSource;
-
-    private Vector2 pos = new();
 
     //MENU PARA SELECCIONAR OPCIONES
     // Start is called before the first frame update
@@ -66,7 +61,7 @@ public class MainTitleMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            pos.y -= 0.5f;
+            pos.y -= 0.6f;
             menuArrow.GetComponent<SpriteRenderer>().transform.position = pos;
             index++;
             if (index >= menuOptions.Count)
@@ -80,7 +75,7 @@ public class MainTitleMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            pos.y += 0.5f;
+            pos.y += 0.6f;
             menuArrow.GetComponent<SpriteRenderer>().transform.position = pos;
             index--;
             if (index < 0)
@@ -96,7 +91,7 @@ public class MainTitleMenu : MonoBehaviour
     IEnumerator LetsPlay(){
         menu.Stop();
         play.Play();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("RobotinJrDialog");
     }
 }

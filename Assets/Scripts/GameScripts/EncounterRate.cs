@@ -11,14 +11,22 @@ public class EncounterRate : MonoBehaviour
     private float timerMin;
     [SerializeField]
     private float timerMax;
+    private float timer;
+    private bool isEncounter;
+    private string sceneName;
     [SerializeField]
-    private float timerMinOG;
+    private AudioSource sound;
     [SerializeField]
-    private float timerMaxOG;
+    private Animator anim;
+    [SerializeField]
+    private GameObject exclamation;
+
+    [Header("Fill")]
     [SerializeField]
     private Image fill;
-    public float timer;
-    private string sceneName;
+    private float fillSpeed;
+    private float emptySpeed;
+    private float currentFillAmount = 0f;
 
 
     void Start()
@@ -26,6 +34,11 @@ public class EncounterRate : MonoBehaviour
         //Para saber que enemigos spawnear
         sceneName = SceneManager.GetActiveScene().name;
         fill.fillAmount = 0;
+        if (exclamation.gameObject == null)
+        {
+            exclamation = GameObject.FindWithTag("Exclamation");
+        }
+        exclamation.SetActive(false);
     }
 
     //Se entras na zona de spawn de enemigos, terás un tempo no que aparezan (mostrar con HUD)
@@ -33,63 +46,55 @@ public class EncounterRate : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (CharacterStats.instance.difficulty != 0)
+            //Buscar algunha forma de que ao quedar quieto se conxele o radar
+            timer = Random.Range(timerMin, timerMax);
+            Debug.Log(timer + " segundos de timer");
+            fillSpeed = 1 / timer;
+            emptySpeed = fillSpeed * 0.75f;
+            if (CharacterStats.instance.difficulty != 1)
             {
-                StopAllCoroutines();
-                StartCoroutine(CheckForEncounter());
+                isEncounter = true;
             }
         }
     }
 
-    //Se saes da zona, para a corutina pero mantén o avanzado ata que spawnee
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            StopAllCoroutines();
-            StartCoroutine(StopEncounter());
+            isEncounter = false;
         }
-
     }
 
-    IEnumerator CheckForEncounter()
+    void Update()
     {
-        switch (CharacterStats.instance.difficulty)
+        if (isEncounter && CharacterStats.instance.difficulty != 1)
         {
-            case 1:
-                timer = Random.Range(timerMin * 1.5f, timerMax * 1.5f);
-                break;
-            case 2:
-                timer = Random.Range(timerMin, timerMax);
-                break;
-            case 3:
-                timer = Random.Range(timerMin * 0.6f, timerMax * 0.6f);
-                break;
+            currentFillAmount += fillSpeed * Time.deltaTime;
+            if (currentFillAmount >= 1f)
+            {
+                currentFillAmount = 0f;
+                TriggerEncounter();
+            }
         }
-        Debug.Log(timer + "segundos de timer");
-        while (CharacterStats.instance.encounterTimer < timer)
+        else
         {
-            //Seg antes do combate
-            yield return new WaitForSeconds(1);
-            CharacterStats.instance.encounterTimer++;
-            fill.fillAmount = CharacterStats.instance.encounterTimer / timer;
+            currentFillAmount -= emptySpeed * Time.deltaTime;
+            if (currentFillAmount < 0f)
+                currentFillAmount = 0f;
         }
-        CharacterStats.instance.encounterTimer = 0;
-        fill.fillAmount = 0; //Reset
-        TriggerEncounter();
-    }
-
-    IEnumerator StopEncounter()
-    {
-        while (CharacterStats.instance.encounterTimer > 0)
-        {
-            yield return new WaitForSeconds(1);
-            CharacterStats.instance.encounterTimer--;
-            fill.fillAmount = CharacterStats.instance.encounterTimer / timer;
-        }
+        fill.fillAmount = currentFillAmount;
     }
 
     void TriggerEncounter()
+    {
+        StartCoroutine(Exclamation());
+        sound.Play();
+        anim.SetTrigger("Start");
+        Invoke("LoadScene", 1.6f);
+    }
+
+    void LoadScene()
     {
         if (sceneName == "StartScene")
         {
@@ -115,5 +120,12 @@ public class EncounterRate : MonoBehaviour
                 SceneSpawnManager.instance.ChangeScene("Zombie2Combat");
             }
         }
+    }
+
+    private IEnumerator Exclamation()
+    {
+        exclamation.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        exclamation.SetActive(false);
     }
 }

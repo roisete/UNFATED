@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Combat Collection_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 2c71057a2119297448bb05f84f13d462, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 4173876187023278085
+  m_TableData:
+  - m_Id: 17159102464
+    m_Localized: Un enemigo corta el paso!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566117998592
+    m_Localized: 'Tu turno, piensa:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1170764668928
+    m_Localized: "No tienes suficiente energ\xEDa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1492048355328
+    m_Localized: "Lanzaste una bola de energ\xEDa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126231314432
+    m_Localized: Recuperaste algunos puntos de vida.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4540036489216
+    m_Localized: Te intentas defender...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4763475451904
+    m_Localized: Aumentas tu defensa!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5536129163264
+    m_Localized: "No sirvi\xF3 para nada!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5812617682944
+    m_Localized: Intentas escapar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5980188516352
+    m_Localized: Has escapado exitosamente!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6144810754048
+    m_Localized: No lograste escapar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6386029371392
+    m_Localized: Has ganado!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6518439354368
+    m_Localized: Has sido derrotado...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7175397384192
+    m_Localized: Acabas de subir de nivel!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49812787634176
+    m_Localized: Golpeas con todas tus fuerzas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52262739320832
+    m_Localized: No era TAN urgente...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52666294280192
+    m_Localized: El enemigo contraataca!
+    m_Metadata:
+      m_Items:
+      - rid: 4173876187023278085
+  - m_Id: 112210835873792
+    m_Localized: No tienes una de esas!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4173876187023278085
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 52666294280192

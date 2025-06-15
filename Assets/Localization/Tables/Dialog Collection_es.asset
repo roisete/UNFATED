@@ -44,7 +44,7 @@ MonoBehaviour:
       y encontrar la llave que oculta, para el orbe azul||deber\xE1s derrotar al
       m\xE1s temible de los enemigos. Finalmente, para el orbe rojo deber\xE1s resolver
       el acertijo de la cuenca. En tu camino aparecer\xE1n peligrosos montruos, pero
-      podr\xE1s descansar en||la hoguera de estas ruinas. Ten cuidado joven, eres
+      podr\xE1s descansar en||las fuentes de estas ruinas. Ten cuidado joven, eres
       nuestra \xFAnica esperanza."
     m_Metadata:
       m_Items: []
@@ -93,6 +93,24 @@ MonoBehaviour:
   - m_Id: 1617746666037248
     m_Localized: "El orbe morado hace contacto con este aparato...||Por alg\xFAn
       motivo, la puerta se ha abierto!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4109781963055104
+    m_Localized: "La ardillo te ve con problemas, as\xED que te ayuda con un peque\xF1o
+      impulso!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4145158694313984
+    m_Localized: "Ves algo extra\xF1o al lado de esas piedras... parece una especie
+      de bot\xF3n.||Aqu\xED esta! Lo pulsas... y se desactiva la barrera!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4146214115418112
+    m_Localized: "Vienen a por m\xED, pero tranquilo, estoy a salvo. Sell\xE9 el
+      acceso al orbe rojo para que no cayese en sus manos, pero tiene soluci\xF3n;||el
+      tercer pilar de la zona derecha del portal contiene un bot\xF3n escondido,
+      p\xFAlsalo y desactivar\xE1s la barrera. Ten cuidado, muchacho, dependemos
+      muchos de ti."
     m_Metadata:
       m_Items: []
   references:

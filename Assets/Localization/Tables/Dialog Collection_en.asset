@@ -43,8 +43,8 @@ MonoBehaviour:
       the entrance to these ruins. For the green orb, you must enter the forest and
       find the key it hides; for the blue orb|| you must defeat the most fearsome
       of enemies. Finally, for the red orb, you must solve the riddle of the basin.
-      Dangerous monsters will appear on your way, but you can rest|| at the bonfire
-      in these ruins. Be careful, young man, you are our only hope.
+      Dangerous monsters will appear on your way, but you can rest|| at the fountains
+      found in these ruins. Be careful, young man, you are our only hope.
     m_Metadata:
       m_Items: []
   - m_Id: 335292458180608
@@ -91,6 +91,24 @@ MonoBehaviour:
   - m_Id: 1617746666037248
     m_Localized: The purple orb makes contact with these machine... Out of the blue,
       the gates are open!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4109781963055104
+    m_Localized: The squirrel sees you're in trouble, so she helps you with a little
+      boost!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4145158694313984
+    m_Localized: You see something strange next to these rocks... it seems like a
+      button.||You press it... and the barrier is gone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4146214115418112
+    m_Localized: "They're coming for me, but don't worry, I'm safe. I sealed the
+      access to the red orb so that it wouldn't fall into their hands, but he has
+      a solution;||the third pillar in the right area of \u200B\u200Bthe portal contains
+      a hidden button, press it and you will deactivate the barrier. Be careful,
+      boy, we depend on you a lot."
     m_Metadata:
       m_Items: []
   references:

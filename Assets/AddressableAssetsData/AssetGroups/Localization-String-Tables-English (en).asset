@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 604e40c066df14643968d030bcbe6bd4
   m_SerializeEntries:
+  - m_GUID: 6baf1762fb17082438e70eea74fcef07
+    m_Address: Combat Collection_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 942520e2835e97144a656bdbb13e7eeb
     m_Address: HUD Collection_en
     m_ReadOnly: 1

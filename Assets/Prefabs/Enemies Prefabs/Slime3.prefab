@@ -120,12 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f594a5b80f91e42bd04c25107611ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Slime de Fuego
-  unitHealth: 15
-  unitMaxHealth: 15
-  unitDefense: 1
-  unitAttack: 6
-  unitExp: 9
+  unitName: Brown Slime
+  unitHealth: 25
+  unitMaxHealth: 25
+  unitDefense: 3
+  unitMDefense: 3
+  unitAttack: 8
+  unitExp: 50
 --- !u!82 &5344065259061277420
 AudioSource:
   m_ObjectHideFlags: 0

@@ -61,6 +61,15 @@ MonoBehaviour:
       vas ir cargando con todo iso!"
     m_Metadata:
       m_Items: []
+  - m_Id: 3498352151044096
+    m_Localized: "Era un cofre impoluto neste desorden e m\xEDrame ahora, aberto
+      e sucio pola t\xFAa culpa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3498853781413888
+    m_Localized: "Algunha linterna neste pozo estar\xEDa de luxo."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

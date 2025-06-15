@@ -61,6 +61,15 @@ MonoBehaviour:
       vas a ir cargando con todo!"
     m_Metadata:
       m_Items: []
+  - m_Id: 3498352151044096
+    m_Localized: "Era un cofre impoluto en este desorden, pero m\xEDrame ahora, abierto
+      y sucio por culpa tuya."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3498853781413888
+    m_Localized: "Alguna linterna en este pozo estar\xEDa de lujo."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -79,12 +79,12 @@ public class KeyItemPickUp : MonoBehaviour
             }
             else
             {
-                BeforeTakingOrb();
+                BeforeTakingItem();
             }
         }
         else if (isGamePaused && Input.GetKeyDown(KeyCode.X))
         {
-            BeforeTakingOrb();
+            BeforeTakingItem();
         }
     }
 
@@ -105,7 +105,7 @@ public class KeyItemPickUp : MonoBehaviour
     }
 
     //Antes de pillar o item quitamos diálogo
-    private void BeforeTakingOrb()
+    private void BeforeTakingItem()
     {
         if (dialogBox != null)
         {

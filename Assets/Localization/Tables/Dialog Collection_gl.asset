@@ -44,7 +44,7 @@ MonoBehaviour:
       e encontrar a chave que oculta, para o orbe azul||deber\xE1s derrotar ao m\xE1s
       temible dos enemigos. Finalmente, para o orbe vermello deber\xE1s resolver
       o acertixo da monta\xF1a. No teu cami\xF1o aparecer\xE1n perigosos monstruos,
-      pero poder\xE1s descansar na||fogata destas ruinas. Ten coidado xoven, eres
+      pero poder\xE1s descansar nas||fontes destas ruinas. Ten coidado xoven, eres
       a nosa \xFAnica esperanza."
     m_Metadata:
       m_Items: []
@@ -92,6 +92,23 @@ MonoBehaviour:
   - m_Id: 1617746666037248
     m_Localized: "O orbe morado fai contacto con este aparato...||Por alg\xFAn motivo,
       abriuse a porta!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4109781963055104
+    m_Localized: A ardilla vete con problemas, polo que decide axudarche cun impulso!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4145158694313984
+    m_Localized: "Ves algo raro ao lado desas pedras... parece unha especie de bot\xF3n.||P\xFAlsalo...
+      e xusto despois se desactivou a barreira!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4146214115418112
+    m_Localized: "Ve\xF1en por min, pero non te preocupes, estou a salvo. Selei o
+      acceso ao orbe vermello para que non caese nas s\xFAas mans, pero hai unha
+      soluci\xF3n;||o terceiro piar \xE1 dereita do portal cont\xE9n un bot\xF3n
+      agochado. Pr\xE9meo e desactivar\xE1s a barreira. Ten coidado, rapaz, moitos
+      de n\xF3s dependemos de ti."
     m_Metadata:
       m_Items: []
   references:

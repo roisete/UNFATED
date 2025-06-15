@@ -79,6 +79,18 @@ MonoBehaviour:
     m_Key: unlockedString
     m_Metadata:
       m_Items: []
+  - m_Id: 4109781963055104
+    m_Key: squirrelBuff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4145158694313984
+    m_Key: deactivateBarrier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4146214115418112
+    m_Key: hutNote
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

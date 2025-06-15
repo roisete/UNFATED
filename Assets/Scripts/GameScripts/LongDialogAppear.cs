@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Localization.Components;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 public class LongDialogAppear : MonoBehaviour
 {
     [SerializeField]
-    private GameObject note;
+    private GameObject item;
+    [SerializeField]
+    private string itemToDestroy;
     [SerializeField]
     private GameObject dialogBox;
     [SerializeField]
@@ -50,6 +53,8 @@ public class LongDialogAppear : MonoBehaviour
             interactionIcon.SetActive(false);
         if (dialogBox != null)
             dialogBox.SetActive(false);
+        if (NotesRead.instance.isRead(itemToDestroy))
+            item.SetActive(false);
 
         //Obtén o texto do diálogo e divídeo
         string dialogText = dialogLocalizeStringEvent.StringReference.GetLocalizedString();
@@ -100,7 +105,8 @@ public class LongDialogAppear : MonoBehaviour
                 else
                 {
                     ContinueGame();
-                    note.SetActive(false);
+                    item.SetActive(false);
+                    NotesRead.instance.notes.Add(itemToDestroy);
                 }
             }
         }
