@@ -1,7 +1,7 @@
 
 # UNFATED – Playable Turn-Based RPG Game Demo 🎮
 
-**UNFATED** is a playable demo of a turn-based role-playing game developed in **Unity** as part of a Final Degree Project in the Multiplatform Application Development course.
+**UNFATED** es una demo jugable de un juego de rol por turnos desarrollado en **Unity** como parte de un Proyecto Final de Grado en la asignatura Desarrollo de Aplicaciones Multiplataforma.
 
 <details>
 <summary>🇪🇸 Español</summary>
